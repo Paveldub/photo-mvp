@@ -1,0 +1,24 @@
+import styled from '@emotion/styled'
+
+export const Button = styled('button')`
+  padding: 20px;
+  color: navy;
+  border-radius: 3px;
+  width: 100px;
+  height: 25px;
+  border: none;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+export const Title = styled('h2')`
+  color: blue;
+  font-size: 25px;
+`
+
+export const Background = styled('div')`
+  background-color: pink;
+`
