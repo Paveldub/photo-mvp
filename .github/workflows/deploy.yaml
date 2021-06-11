@@ -1,28 +1,16 @@
-name: Deploy
+name: deploy website
 
-on:
-  push:
-    branches:
-      - master
-
+on: [pull_request]
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: amondnet/vercel-action@v20
         with:
-          node-version: ${{ matrix.node-version }}
-      # Setup key
-      - run: set -eu
-      - run: mkdir "$HOME/.ssh"
-      - run: echo "${{ secrets.key }}" > "$HOME/.ssh/key"
-      - run: chmod 600 "$HOME/.ssh/key"
-      # Build
-      - run: npm install
-      - run: npm run build
-      # Deploy
-      - run: cd public && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pavel.demidovich@aventusgroup.com:/var/www/photo-mvp.herokuapp.com/
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+          vercel-args: '--prod' #Optional
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+          working-directory: ./dist
