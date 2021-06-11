@@ -12,7 +12,7 @@ export const Button = styled('button')`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-`;
+`
 
 export const Title = styled('h2')`
   color: blue;

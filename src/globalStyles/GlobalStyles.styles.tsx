@@ -1,10 +1,8 @@
 import { Global, css } from '@emotion/core'
 
-export const GlobalStyle = (children: any) => (
+export const GlobalStyle = (children?: any) => (
   <Global
-
     {...children}
-
     styles={css`
       html {
         font-family: sans-serif;
@@ -17,7 +15,12 @@ export const GlobalStyle = (children: any) => (
         margin: 0;
         padding: 0;
       }
-      h1, h2, h3, h4, h5, h6 {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin: 0;
         padding: 0;
       }
