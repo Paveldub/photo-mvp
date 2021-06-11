@@ -36,3 +36,5 @@ public
 yarn.lock
 package-lock.json
 .history
+
+.vercel
