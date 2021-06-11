@@ -1,4 +1,4 @@
-name: Cicd
+name: Test
 
 on:
   pull_request:
@@ -12,10 +12,10 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
-        - run: npm ci
-        - run: npm test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm test
