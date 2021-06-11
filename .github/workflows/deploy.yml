@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: "12.x"
       - name: Install dependencies
-        run: yarn
+        run: npm install
       - uses: actions/vercel-deployment@0.5.1
         with:
           vercelToken: ${{ secrets.VERCEL_TOKEN }}
