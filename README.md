@@ -16,6 +16,7 @@
 2. Deno
 
 # CI/CD Github actions & vercel
+stage: https://photo-mvp.vercel.app/
 
 
 
