@@ -41,5 +41,5 @@ module.exports = {
   ],
   devServer: {
     port: portFinderSync.getPort(8080),
-  }
-};
+  },
+}

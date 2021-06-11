@@ -5,8 +5,8 @@ import { Header } from './Components/Header/Header'
 
 import { GlobalStyle } from './globalStyles/GlobalStyles.styles'
 
-import logo from './assets/images/pic.jpg'
-import logoPic from './assets/images/logo.svg'
+import logo from './images/pic.jpg'
+import logoPic from './images/logo.svg'
 
 export const App = () => {
   return (
