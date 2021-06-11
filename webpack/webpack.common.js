@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const portFinderSync = require('portfinder-sync');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const portFinderSync = require('portfinder-sync')
 
 module.exports = {
   entry: {
@@ -10,7 +10,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, '../public'),
     filename: 'bundle.js',
   },
   module: {
