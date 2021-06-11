@@ -30,6 +30,7 @@ node_modules/
 # Build results
 dist
 build
+public
 
 # Lock files
 yarn.lock

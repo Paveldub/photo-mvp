@@ -25,4 +25,4 @@ jobs:
       - run: npm install
       - run: npm run build
       # Deploy
-      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pavel.demidovich@aventusgroup.com:/var/www/photo-mvp.herokuapp.com/
+      - run: cd public && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . pavel.demidovich@aventusgroup.com:/var/www/photo-mvp.herokuapp.com/
