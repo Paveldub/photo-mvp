@@ -17,8 +17,7 @@ export const App = () => {
       <Background>
         <Title>
           React TypeScript Webpack Starter Template - {process.env.NODE_ENV} -
-          {process.env.name} TEST TESTTEST TESTTEST TESTTEST TESTTEST TESTTEST
-          TESTTEST TESTTEST TESTTEST TESTTEST TESTTEST TESTTEST TEST
+          {process.env.name}
         </Title>
         <Button>changed text 111</Button>
         <div>

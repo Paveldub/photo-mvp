@@ -1,9 +1,6 @@
 name: deploy website
 
-on:
-  pull_request:
-    branches:
-      - master
+on: [push]
 
 jobs:
   deploy:
