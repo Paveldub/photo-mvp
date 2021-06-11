@@ -10,7 +10,7 @@
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\"",
     "test": "editorconfig-checker --exclude '.git|node_modules|.DS_Store'",
-    "deploy": "cd dist && rsync --archive --compress --delete . pavel.demidovich@aventusgroup.com:/var/www/photo-mvp.vercel.app/"
+    "deploy": "cd public && rsync --archive --compress --delete . pavel.demidovich@aventusgroup.com:/var/www/photo-mvp.vercel.app/"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
