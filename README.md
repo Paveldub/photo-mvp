@@ -15,7 +15,7 @@
 1. Mongo DB
 2. Deno
 
-# CI/CD Github actions
+# CI/CD Github actions & vercel
 
 
 
