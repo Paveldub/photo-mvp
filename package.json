@@ -8,7 +8,8 @@
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "test": "editorconfig-checker --exclude '.git|node_modules|.DS_Store'"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -50,8 +51,11 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "add": "^2.0.6",
+    "editorconfig-checker": "^4.0.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "yarn": "^1.22.10"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
