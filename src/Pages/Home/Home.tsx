@@ -1,9 +1,11 @@
-import { Slider } from '../../Components/Slider/Slider'
+import { Slider } from '../../Components'
 
-export const Home = () => {
+const Home = () => {
   return (
     <>
       <Slider />
     </>
   )
 }
+
+export default Home

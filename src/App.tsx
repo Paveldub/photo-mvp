@@ -1,9 +1,5 @@
-import { Header } from './Components/Header/Header'
-import { Footer } from './Components/Footer/Footer'
-import { Home } from './Pages/Home/Home'
-import { Photography } from './Pages/Photography/Photography'
-import { About } from './Pages/About/About'
-import { ContactUs } from './Pages/Contactus/Contactus'
+import { Header, Footer } from './Components'
+import { Home, Photography, About, ContactUs } from './Pages'
 
 import {
   GlobalStyle,
