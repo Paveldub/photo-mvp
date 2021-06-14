@@ -58,3 +58,7 @@ export const GlobalStyle = (children?: any) => (
 export const ContentWrapper = styled('div')`
   padding-bottom: 90px;
 `
+
+export const PagesWrapper = styled('div')`
+  padding: 2px;
+`
