@@ -13,7 +13,7 @@ import {
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 
-const StyledApp = styled.div`
+const StyledApp = styled('div')`
   color: ${(props) => props.theme.fontColor};
 `
 
@@ -44,7 +44,6 @@ export const App = () => {
         </PagesWrapper>
         <Footer />
       </ContentWrapper>
-      {/* </ThemeProvider> */}
     </>
   )
 }
