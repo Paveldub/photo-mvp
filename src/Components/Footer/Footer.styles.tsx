@@ -6,10 +6,9 @@ export const Container = styled('div')`
   padding: 0 15px;
 `
 
-export const FooterWrapper = styled('div')`
+export const FooterWrapper = styled('footer')`
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
 `
 
 export const FooterHalf = styled('div')`

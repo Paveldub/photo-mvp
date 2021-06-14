@@ -7,7 +7,7 @@ export const Container = styled('div')`
   padding: 0 15px;
 `
 
-export const HeaderWrapper = styled('div')`
+export const HeaderWrapper = styled('header')`
   display: flex;
 `
 

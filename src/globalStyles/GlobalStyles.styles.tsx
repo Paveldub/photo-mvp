@@ -1,4 +1,5 @@
 import { Global, css } from '@emotion/core'
+import styled from '@emotion/styled'
 
 export const GlobalStyle = (children?: any) => (
   <Global
@@ -23,6 +24,15 @@ export const GlobalStyle = (children?: any) => (
         box-sizing: border-box;
         font-family: AvenirNextCyrRegular;
         font-weight: 400;
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style-type: none;
       }
       html,
       body {
@@ -44,3 +54,7 @@ export const GlobalStyle = (children?: any) => (
     `}
   />
 )
+
+export const ContentWrapper = styled('div')`
+  padding-bottom: 90px;
+`
