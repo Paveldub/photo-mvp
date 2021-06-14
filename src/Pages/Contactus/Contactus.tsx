@@ -1,7 +1,9 @@
+import { GoogleMap } from '../../Components'
+
 export const ContactUs = () => {
   return (
     <>
-      <h1>Contact us page</h1>
+      <GoogleMap />
     </>
   )
 }
