@@ -9,7 +9,8 @@ export const Form = () => {
     watch,
   } = useForm({ mode: 'onBlur' })
 
-  const onSubmit = (data?: any) => console.log('Отправлено:', data)
+  const onSubmit = (data?: any) => alert(JSON.stringify(data))
+
   const watchFields = watch(['name', 'phone', 'email', 'age'])
 
   console.log(watchFields)
@@ -48,7 +49,7 @@ export const Form = () => {
           />
         </label>
         {errors.age && <FormError>Обязательное поле</FormError>}
-        <input type="submit" />
+        <button type="submit">Send data</button>
         форму отправили {submitCount} раз
       </FormWrap>
     </>
