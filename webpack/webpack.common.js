@@ -1,8 +1,15 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const portFinderSync = require('portfinder-sync')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
   entry: {
     main: './src/index.tsx',
   },
@@ -32,13 +39,12 @@ module.exports = {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
   devServer: {
     port: portFinderSync.getPort(8080),
   },
