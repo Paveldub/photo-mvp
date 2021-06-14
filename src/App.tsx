@@ -1,10 +1,11 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import { Route } from 'react-router-dom'
-// import { ThemeProvider } from '@emotion/react'
+import { ThemeProvider } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import { Header, Footer } from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
-// import { lightTheme, darkTheme } from './Components/DarkModeStyles/Themes'
+import { lightTheme, darkTheme } from './Components/DarkModeStyles/Themes'
 
 import {
   GlobalStyle,
@@ -12,16 +13,25 @@ import {
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 
-export const App = () => {
-  // const [theme, setTheme] = useState('light')
+const StyledApp = styled.div`
+  color: ${(props) => props.theme.fontColor};
+`
 
-  // const themeToggler = () => {
-  //   theme === 'light' ? setTheme('dark') : setTheme('light')
-  // }
+export const App = () => {
+  const [theme, setTheme] = useState('light')
+
+  const themeToggler = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
 
   return (
     <>
-      {/* <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> */}
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+        <StyledApp>
+          <button onClick={() => themeToggler()}>Change Theme</button>
+        </StyledApp>
+      </ThemeProvider>
+
       <GlobalStyle />
 
       <ContentWrapper>
