@@ -41,7 +41,7 @@ export const Form = () => {
         />
         {errors.email && <FormError>Обязательное поле</FormError>}
         <label>
-          Вы подтверждаете, что Вам 18 лет?
+          Вы подтверждаете, что Вам 18+ лет?
           <input
             type="checkbox"
             id="checkbox"

@@ -1,6 +1,10 @@
+// import { useState } from 'react'
+import { Route } from 'react-router-dom'
+// import { ThemeProvider } from '@emotion/react'
+
 import { Header, Footer } from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
-import { Route } from 'react-router-dom'
+// import { lightTheme, darkTheme } from './Components/DarkModeStyles/Themes'
 
 import {
   GlobalStyle,
@@ -9,9 +13,17 @@ import {
 } from './globalStyles/GlobalStyles.styles'
 
 export const App = () => {
+  // const [theme, setTheme] = useState('light')
+
+  // const themeToggler = () => {
+  //   theme === 'light' ? setTheme('dark') : setTheme('light')
+  // }
+
   return (
     <>
+      {/* <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}> */}
       <GlobalStyle />
+
       <ContentWrapper>
         <Header />
         <PagesWrapper>
@@ -22,6 +34,7 @@ export const App = () => {
         </PagesWrapper>
         <Footer />
       </ContentWrapper>
+      {/* </ThemeProvider> */}
     </>
   )
 }

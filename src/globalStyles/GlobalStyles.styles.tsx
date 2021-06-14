@@ -1,9 +1,8 @@
 import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 
-export const GlobalStyle = (children?: any) => (
+export const GlobalStyle = () => (
   <Global
-    {...children}
     styles={css`
       html {
         font-family: sans-serif;
