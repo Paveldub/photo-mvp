@@ -2,18 +2,23 @@ import styled from '@emotion/styled'
 
 export const Container = styled('div')`
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
 `
 
 export const FooterWrapper = styled('footer')`
   display: flex;
-  justify-content: space-between;
+`
+
+export const FooterContentWrapper = styled('div')`
+  padding: 20px 0;
 `
 
 export const FooterHalf = styled('div')`
   width: 50%;
   background: #ccc;
+  padding: 20px 10px;
 `
 
 export const SocialIconLink = styled('a')`

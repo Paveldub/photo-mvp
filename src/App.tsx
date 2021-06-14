@@ -1,12 +1,12 @@
 import { Header, Footer } from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
+import { Route } from 'react-router-dom'
 
 import {
   GlobalStyle,
   ContentWrapper,
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
-import { Route } from 'react-router-dom'
 
 export const App = () => {
   return (

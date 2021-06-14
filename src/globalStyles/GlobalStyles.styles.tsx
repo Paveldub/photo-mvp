@@ -56,7 +56,10 @@ export const GlobalStyle = (children?: any) => (
 )
 
 export const ContentWrapper = styled('div')`
-  padding-bottom: 90px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const PagesWrapper = styled('div')`
