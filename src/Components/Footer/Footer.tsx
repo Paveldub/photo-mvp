@@ -11,7 +11,7 @@ import {
 import instagramPic from '../../images/free-icon-instagram-2111463.svg'
 import telegramPic from '../../images/free-icon-telegram-906377.svg'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <>
       <Container>
@@ -45,5 +45,3 @@ const Footer = () => {
     </>
   )
 }
-
-export default Footer

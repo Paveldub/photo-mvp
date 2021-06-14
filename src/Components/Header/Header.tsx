@@ -11,7 +11,7 @@ import {
   HeaderLogoWrapper,
 } from './Header.styles'
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <Container>
@@ -36,5 +36,3 @@ const Header = () => {
     </>
   )
 }
-
-export default Header

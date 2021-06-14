@@ -1,3 +1,3 @@
-export { default as Footer } from './Footer/Footer'
-export { default as Header } from './Header/Header'
-export { default as Slider } from './Slider/Slider'
+export { Footer } from './Footer/Footer'
+export { Header } from './Header/Header'
+export { Slider } from './Slider/Slider'

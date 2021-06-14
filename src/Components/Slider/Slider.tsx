@@ -9,7 +9,7 @@ import './Slider.scss'
 
 SwiperCore.use([Navigation, Scrollbar, Autoplay])
 
-const Slider = () => {
+export const Slider = () => {
   const slides = []
 
   for (let i = 0; i < 5; i += 1) {
@@ -37,5 +37,3 @@ const Slider = () => {
     </Swiper>
   )
 }
-
-export default Slider
