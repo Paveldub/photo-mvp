@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import { Header, Footer } from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
-import { lightTheme, darkTheme } from './Components/DarkModeStyles/Themes'
+import { lightTheme, darkTheme } from './Components/Themes/Themes'
 
 import {
   GlobalStyle,
