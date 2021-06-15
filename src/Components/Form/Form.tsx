@@ -17,7 +17,7 @@ export const Form = () => {
 
   return (
     <>
-      <h1>Заполните форму</h1>
+      <h1>Just send me a message.</h1>
       <FormWrap onSubmit={handleSubmit(onSubmit)}>
         <FormInput
           placeholder="Имя"
