@@ -1,7 +1,11 @@
+import { Container } from './Photography.styles'
+
 export const Photography = () => {
   return (
     <>
-      <h1>Photography page</h1>
+      <Container>
+        <h1>Photography page</h1>
+      </Container>
     </>
   )
 }
