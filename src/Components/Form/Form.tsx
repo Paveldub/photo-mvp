@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form'
-import { FormWrap, FormInput, FormError } from './Form.styles'
+import { FormWrap, FormInput, FormError, FormSelect } from './Form.styles'
 
 export const Form = () => {
   const {
@@ -11,7 +11,7 @@ export const Form = () => {
 
   const onSubmit = (data?: any) => alert(JSON.stringify(data))
 
-  const watchFields = watch(['name', 'phone', 'email', 'age'])
+  const watchFields = watch(['name', 'phone', 'email', 'age', 'select'])
 
   console.log(watchFields)
 
@@ -40,6 +40,14 @@ export const Form = () => {
           {...register('email', { required: true })}
         />
         {errors.email && <FormError>Обязательное поле</FormError>}
+        <FormSelect {...register('select', { required: true })}>
+          <option value="" hidden>
+            Выберите тип съемки
+          </option>
+          <option value="nude">Nude</option>
+          <option value="portrait">Portrain</option>
+        </FormSelect>
+        {errors.select && <FormError>Обязательное поле</FormError>}
         <label>
           Вы подтверждаете, что Вам 18+ лет?
           <input
