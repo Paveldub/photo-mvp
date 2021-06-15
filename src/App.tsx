@@ -1,49 +1,39 @@
-import { useState } from 'react'
+import { ThemeProvider } from 'styled-components'
 import { Route } from 'react-router-dom'
-import { ThemeProvider } from '@emotion/react'
-import styled from '@emotion/styled'
 
-import { Header, Footer } from './Components'
+import { Header, Footer, Toggle, useDarkMode } from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
-import { lightTheme, darkTheme } from './Components/Themes/Themes'
+
+import { lightTheme, darkTheme } from './Themes/Themes'
 
 import {
-  GlobalStyle,
+  GlobalStyles,
   ContentWrapper,
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 
-const StyledApp = styled('div')`
-  color: ${(props) => props.theme.fontColor};
-`
-
 export const App = () => {
-  const [theme, setTheme] = useState('light')
+  const [theme, themeToggler] = useDarkMode()
 
-  const themeToggler = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light')
-  }
+  const themeMode = theme === 'light' ? lightTheme : darkTheme
 
   return (
     <>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <StyledApp>
-          <button onClick={() => themeToggler()}>Change Theme</button>
-        </StyledApp>
+      <ThemeProvider theme={themeMode}>
+        <GlobalStyles />
+
+        <ContentWrapper>
+          <Header />
+          <Toggle theme={theme} toggleTheme={themeToggler} />
+          <PagesWrapper>
+            <Route path="/" component={Home} exact />
+            <Route path="/photography" component={Photography} exact />
+            <Route path="/about" component={About} exact />
+            <Route path="/contactus" component={ContactUs} exact />
+          </PagesWrapper>
+          <Footer />
+        </ContentWrapper>
       </ThemeProvider>
-
-      <GlobalStyle />
-
-      <ContentWrapper>
-        <Header />
-        <PagesWrapper>
-          <Route path="/" component={Home} exact />
-          <Route path="/photography" component={Photography} exact />
-          <Route path="/about" component={About} exact />
-          <Route path="/contactus" component={ContactUs} exact />
-        </PagesWrapper>
-        <Footer />
-      </ContentWrapper>
     </>
   )
 }

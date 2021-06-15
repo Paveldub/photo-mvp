@@ -1,9 +1,5 @@
-import { Slider } from '../../Components'
+// import { Slider } from '../../Components'
 
 export const Home = () => {
-  return (
-    <>
-      <Slider />
-    </>
-  )
+  return <h1>test</h1>
 }

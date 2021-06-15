@@ -1,5 +1,7 @@
 export { Footer } from './Footer/Footer'
 export { Header } from './Header/Header'
-export { Slider } from './Slider/Slider'
+// export { Slider } from './Slider/Slider'
 export { GoogleMap } from './Map/Map'
 export { Form } from './Form/Form'
+export { Toggle } from './TogglerBtn/TogglerBtn'
+export { useDarkMode } from './useDarkMode/useDarkMode'
