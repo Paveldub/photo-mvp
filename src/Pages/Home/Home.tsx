@@ -1,5 +1,5 @@
 // import { Slider } from '../../Components'
 
 export const Home = () => {
-  return <h1>test</h1>
+  return <h1>home page</h1>
 }

@@ -24,7 +24,7 @@ export const App = () => {
 
         <ContentWrapper>
           <Header />
-          <Toggle theme={theme} toggleTheme={themeToggler} />
+          <Toggle toggleTheme={themeToggler} />
           <PagesWrapper>
             <Route path="/" component={Home} exact />
             <Route path="/photography" component={Photography} exact />
