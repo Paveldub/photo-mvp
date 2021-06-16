@@ -1,8 +1,7 @@
+import SwiperCore, { Autoplay, Navigation } from 'swiper'
 import { Slider } from '../../Components/Slider/Slider'
 import { Global } from '@emotion/react'
 import { globalStyles } from '../../Components/Slider/stylesConfig'
-import SwiperCore, { Autoplay, Navigation } from 'swiper'
-
 import { Box } from '@react-yuki/ui'
 
 export const Home = () => {

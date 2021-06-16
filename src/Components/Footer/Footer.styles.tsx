@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 
-export const Container = styled('div')`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-`
-
-export const FooterWrapper = styled('footer')`
+export const ContainerWrapper = styled('footer')`
   display: flex;
+  box-shadow: 0 2px 15px rgba(0, 44, 84, 0.25);
+  width: 100%;
+  background-color: #ccc;
+  z-index: 10;
 `
 
-export const FooterContentWrapper = styled('div')`
-  padding: 20px 0;
+export const FooterContainer = styled('div')`
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
 `
 
 export const FooterHalf = styled('div')`

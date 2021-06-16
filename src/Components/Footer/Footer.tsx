@@ -1,21 +1,21 @@
 import {
-  Container,
   FooterHalf,
-  FooterWrapper,
+  ContainerWrapper,
+  FooterContainer,
   SocialIconLink,
   AllRightsReverved,
   DropMeAline,
   SocialIconPic,
 } from './Footer.styles'
 
-import instagramPic from '../../images/free-icon-instagram-2111463.svg'
-import telegramPic from '../../images/free-icon-telegram-906377.svg'
+import instagramPic from '../../assets/images/free-icon-instagram-2111463.svg'
+import telegramPic from '../../assets/images/free-icon-telegram-906377.svg'
 
 export const Footer = () => {
   return (
     <>
-      <Container>
-        <FooterWrapper>
+      <ContainerWrapper>
+        <FooterContainer>
           <FooterHalf>
             <SocialIconLink
               href="//www.instagram.com/demidovich.fiml/"
@@ -40,8 +40,8 @@ export const Footer = () => {
               (C) {new Date().getFullYear()} All right reserved
             </AllRightsReverved>
           </FooterHalf>
-        </FooterWrapper>
-      </Container>
+        </FooterContainer>
+      </ContainerWrapper>
     </>
   )
 }

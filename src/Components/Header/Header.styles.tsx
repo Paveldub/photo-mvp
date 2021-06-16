@@ -1,20 +1,23 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Container = styled('div')`
-  max-width: 1200px;
+export const ContainerWrapper = styled('header')`
+  display: flex;
+  box-shadow: 0 2px 15px rgba(0, 44, 84, 0.25);
   width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
+  background-color: #ccc;
+  z-index: 10;
 `
 
-export const HeaderWrapper = styled('header')`
+export const HeaderContainer = styled('div')`
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
 `
 
 export const HeaderHalf = styled('div')`
   width: 50%;
-  background: #ccc;
 `
 
 export const HeaderLogoWrapper = styled('div')`

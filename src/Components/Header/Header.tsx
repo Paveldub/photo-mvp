@@ -1,21 +1,21 @@
-import logo from '../../images/logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 import {
-  Container,
-  HeaderWrapper,
   HeaderHalf,
   HeaderLogo,
   HeaderNav,
   HeaderLink,
   HeaderLogoText,
   HeaderLogoWrapper,
+  ContainerWrapper,
+  HeaderContainer,
 } from './Header.styles'
 
 export const Header = () => {
   return (
     <>
-      <Container>
-        <HeaderWrapper>
+      <ContainerWrapper>
+        <HeaderContainer>
           <HeaderHalf>
             <HeaderLink to="/">
               <HeaderLogoWrapper>
@@ -31,8 +31,8 @@ export const Header = () => {
               <HeaderLink to="/contactus">Contact us</HeaderLink>
             </HeaderNav>
           </HeaderHalf>
-        </HeaderWrapper>
-      </Container>
+        </HeaderContainer>
+      </ContainerWrapper>
     </>
   )
 }
