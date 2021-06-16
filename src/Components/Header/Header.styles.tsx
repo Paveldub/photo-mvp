@@ -14,6 +14,7 @@ export const HeaderContainer = styled('div')`
   margin: 0 auto;
   width: 100%;
   display: flex;
+  padding: 0 15px;
 `
 
 export const HeaderHalf = styled('div')`

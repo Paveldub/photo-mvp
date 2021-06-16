@@ -13,6 +13,7 @@ export const FooterContainer = styled('div')`
   margin: 0 auto;
   width: 100%;
   display: flex;
+  padding: 0 15px;
 `
 
 export const FooterHalf = styled('div')`

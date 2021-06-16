@@ -53,18 +53,16 @@
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0",
-    "yarn": "^1.22.10"
-  },
-  "dependencies": {
+    "yarn": "^1.22.10",
     "@emotion/react": "^11.0.0",
     "@react-yuki/ui": "^0.0.39",
     "@types/styled-components": "^5.1.10",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "react-id-swiper": "^4.0.0",
-    "react-multi-carousel": "^2.6.3",
-    "react-switch": "^6.0.0",
     "swiper": "^6.7.0"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
