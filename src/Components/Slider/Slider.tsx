@@ -5,16 +5,16 @@ import './Slider.styles.scss'
 SwiperCore.use([Autoplay, Navigation])
 
 const pics = [
-  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+  'https://i.ibb.co/JCPpVCF/119950000004.jpg',
+  'https://i.ibb.co/TqZLRLf/119950000027.jpg',
+  'https://i.ibb.co/WnpGr1N/119566000035.jpg',
+  'https://i.ibb.co/GMsGvzc/119950000015.jpg',
 ]
 
 export const Slider = () => {
   return (
     <Swiper
-      slidesPerView={3}
+      slidesPerView={4}
       spaceBetween={0}
       navigation
       loop={true}
@@ -27,7 +27,7 @@ export const Slider = () => {
       speed={1000}
       breakpoints={{
         992: {
-          slidesPerView: 3,
+          slidesPerView: 4,
         },
         768: {
           slidesPerView: 2,
