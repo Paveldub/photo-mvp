@@ -8,7 +8,9 @@ const pics = [
   'https://i.ibb.co/JCPpVCF/119950000004.jpg',
   'https://i.ibb.co/TqZLRLf/119950000027.jpg',
   'https://i.ibb.co/WnpGr1N/119566000035.jpg',
+  'https://i.ibb.co/hR19D0K/112841040037.jpg',
   'https://i.ibb.co/GMsGvzc/119950000015.jpg',
+  'https://i.ibb.co/YfcDksB/112841040028.jpg',
 ]
 
 export const Slider = () => {
