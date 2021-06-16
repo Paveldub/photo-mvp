@@ -1,4 +1,4 @@
-import { theme as defaultTheme, normalize } from '@react-yuki/ui'
+import { theme as defaultTheme } from '@react-yuki/ui'
 import { css } from '@emotion/react'
 
 export const colors = {
@@ -529,40 +529,7 @@ export const swiperStyle = css`
       }
     }
   }
-
-  /* stylelint-enable */
 `
-
-export const globalStyles = css`
-  ${normalize}
-
-  html,
-  body {
-    background-color: ${colors.white};
-    font-family: ${defaultTheme.fonts.base};
-    color: ${colors.gray[8]};
-    font-size: 16px;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    text-size-adjust: 100%;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-
-    * {
-      box-sizing: border-box;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
-
-  ${swiperStyle}
-`
-
 export const theme = {
   ...defaultTheme,
   colors,
