@@ -1,10 +1,15 @@
 import { ThemeProvider } from 'styled-components'
 import { Route } from 'react-router-dom'
 
-import { Header, Footer, Toggle, useDarkMode } from './Components'
+import {
+  Header,
+  Footer,
+  Toggle,
+  useDarkMode,
+  lightTheme,
+  darkTheme,
+} from './Components'
 import { Home, Photography, About, ContactUs } from './Pages'
-
-import { lightTheme, darkTheme } from './Themes/Themes'
 
 import {
   GlobalStyles,
