@@ -1,35 +1,26 @@
-import SwiperCore, { Autoplay, Navigation } from 'swiper'
 import { Slider } from '../../Components/Slider/Slider'
-import { Global } from '@emotion/react'
-import { swiperStyle } from '../../Components/Slider/stylesConfig'
-import { Box } from '@react-yuki/ui'
 
 export const Home = () => {
-  SwiperCore.use([Autoplay, Navigation])
-
   return (
     <>
-      <Global styles={swiperStyle} />
-
-      <Box>
-        <Slider
-          params={{
-            slidesPerView: 4,
-            spaceBetween: 0,
-            loop: true,
-            centeredSlides: true,
-            grabCursor: true,
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-          }}
-        />
-      </Box>
+      <Slider />
     </>
   )
 }
+
+// SwiperCore.use([Autoplay, Navigation])
+// params = {{
+//   slidesPerView: 4,
+//     spaceBetween: 0,
+//       loop: true,
+//         centeredSlides: true,
+//           grabCursor: true,
+//         autoplay: {
+// delay: 2500,
+//   disableOnInteraction: false,
+//         },
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//       prevEl: '.swiper-button-prev',
+//             },
+// }}

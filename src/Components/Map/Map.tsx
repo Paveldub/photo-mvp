@@ -18,7 +18,7 @@ export const GoogleMap = React.memo(function Map() {
 
   return (
     <>
-      <div ref={ref} style={{ width: '100%', height: 400 }} />
+      <div ref={ref} style={{ width: '100%', height: 500 }} />
     </>
   )
 })

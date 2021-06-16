@@ -1,26 +1,55 @@
-import { FC } from 'react'
-import Swiper from 'react-id-swiper'
-import { generateSlides } from './utils'
-import { SlideContainer } from './styledComponents'
-import { SliderProps, Slide } from './types'
-import SlideItem from './SlideItem'
+import SwiperCore, { Autoplay, Navigation } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import './Slider.styles.scss'
 
-export const renderSlide = ({ id, ...rest }: Slide, idx: number) => (
-  <SlideItem {...rest} key={`${id}-slideContent-${idx}`} width={1} />
-)
+SwiperCore.use([Autoplay, Navigation])
 
-export const Slider: FC<SliderProps> = ({
-  hasImage,
-  useImageAsTag,
-  params,
-  id,
-  ...styles
-}) => {
-  const data = generateSlides({ id, hasImage, useImageAsTag })
+const pics = [
+  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+  'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
+]
 
+export const Slider = () => {
   return (
-    <SlideContainer {...styles} id={id}>
-      <Swiper {...params}>{data.map(renderSlide)}</Swiper>
-    </SlideContainer>
+    <Swiper
+      slidesPerView={3}
+      spaceBetween={0}
+      navigation
+      loop={true}
+      centeredSlides={true}
+      grabCursor={true}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      breakpoints={{
+        992: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        600: {
+          slidesPerView: 1,
+        },
+        480: {
+          slidesPerView: 1,
+        },
+        320: {
+          slidesPerView: 1,
+        },
+      }}
+    >
+      {pics &&
+        pics.map((pic, index) => {
+          return (
+            <SwiperSlide key={`${pic}_${index}`} onClick={() => alert(index)}>
+              <img src={pic} alt="text" />
+            </SwiperSlide>
+          )
+        })}
+    </Swiper>
   )
 }

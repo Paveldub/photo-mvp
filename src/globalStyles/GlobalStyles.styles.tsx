@@ -60,5 +60,5 @@ export const ContentWrapper = styled('div')`
 `
 
 export const PagesWrapper = styled('div')`
-  padding: 2px;
+  padding: 0;
 `
