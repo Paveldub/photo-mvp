@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { Flex, Box, Heading, Image, theme } from '@react-yuki/ui'
 import { SlideProps } from './types'
 

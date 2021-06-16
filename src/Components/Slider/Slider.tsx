@@ -9,7 +9,7 @@ export const renderSlide = ({ id, ...rest }: Slide, idx: number) => (
   <SlideItem {...rest} key={`${id}-slideContent-${idx}`} width={1} />
 )
 
-const Slider: FC<SliderProps> = ({
+export const Slider: FC<SliderProps> = ({
   hasImage,
   useImageAsTag,
   params,
@@ -24,5 +24,3 @@ const Slider: FC<SliderProps> = ({
     </SlideContainer>
   )
 }
-
-export default Slider
