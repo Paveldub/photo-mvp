@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Swiper from 'react-id-swiper'
 import { generateSlides } from './utils'
 import { SlideContainer } from './styledComponents'

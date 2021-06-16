@@ -26,7 +26,7 @@ export const Header = () => {
           </HeaderHalf>
           <HeaderHalf>
             <HeaderNav>
-              <HeaderLink to="/photography">Photography</HeaderLink>
+              <HeaderLink to="/portfolio">Portfolio</HeaderLink>
               <HeaderLink to="/about">About</HeaderLink>
               <HeaderLink to="/contactus">Contact us</HeaderLink>
             </HeaderNav>

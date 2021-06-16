@@ -6,6 +6,7 @@ export const ContainerWrapper = styled('footer')`
   width: 100%;
   background-color: #ccc;
   z-index: 10;
+  margin-top: auto;
 `
 
 export const FooterContainer = styled('div')`

@@ -23,9 +23,7 @@ export const generateSlides: GenerateSlides = (options) => {
     fill: colors[colorName][4],
     useImageAsTag,
     ...(hasImage && {
-      imageUrl: `https://picsum.photos/id/${
-        Math.floor(Math.random() * 100) + idx
-      }/320`,
+      imageUrl: `https://picsum.photos/id/1`,
     }),
   }))
 }

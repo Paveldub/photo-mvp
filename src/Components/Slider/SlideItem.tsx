@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Flex, Box, Heading, Image, theme } from '@react-yuki/ui'
+import { Flex, Box, Heading, Image } from '@react-yuki/ui'
 import { SlideProps } from './types'
 
 const Slide: FC<SlideProps> = ({
@@ -57,11 +57,5 @@ const Slide: FC<SlideProps> = ({
     </Flex>
   )
 }
-
-Slide.defaultProps = {
-  fill: theme.colors.gray[2],
-}
-
-Slide.displayName = 'Slide'
 
 export default Slide

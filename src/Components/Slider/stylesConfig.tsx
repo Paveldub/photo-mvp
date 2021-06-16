@@ -59,6 +59,7 @@ export const swiperStyle = css`
     height: 100%;
     position: relative;
     transition-property: transform;
+    height: 698px !important;
   }
 
   .swiper-slide-invisible-blank {

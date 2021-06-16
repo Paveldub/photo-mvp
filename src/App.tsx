@@ -9,7 +9,7 @@ import {
   lightTheme,
   darkTheme,
 } from './Components'
-import { Home, Photography, About, ContactUs } from './Pages'
+import { Home, Portfolio, About, ContactUs } from './Pages'
 
 import {
   GlobalStyles,
@@ -32,7 +32,7 @@ export const App = () => {
           <Toggle toggleTheme={themeToggler} />
           <PagesWrapper>
             <Route path="/" component={Home} exact />
-            <Route path="/photography" component={Photography} exact />
+            <Route path="/portfolio" component={Portfolio} exact />
             <Route path="/about" component={About} exact />
             <Route path="/contactus" component={ContactUs} exact />
           </PagesWrapper>
