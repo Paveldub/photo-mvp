@@ -21,9 +21,10 @@ export const Slider = () => {
       centeredSlides={true}
       grabCursor={true}
       autoplay={{
-        delay: 2500,
+        delay: 3000,
         disableOnInteraction: false,
       }}
+      speed={1000}
       breakpoints={{
         992: {
           slidesPerView: 3,
