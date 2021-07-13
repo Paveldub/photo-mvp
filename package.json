@@ -42,6 +42,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.1",
     "husky": "^4.0.0",
+    "i18next": "^20.3.2",
     "lint-staged": "^11.0.0",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^6.0.0",
@@ -49,9 +50,12 @@
     "prettier": "^2.3.1",
     "react-hook-form": "^7.8.4",
     "react-hook-google-maps": "^0.0.3",
+    "react-i18next": "^11.11.1",
     "react-id-swiper": "^4.0.0",
+    "react-redux": "^7.2.4",
     "react-refresh": "^0.10.0",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
     "sass-loader": "^12.1.0",
     "styled-components": "^5.3.0",
     "swiper": "^6.7.0",
@@ -62,10 +66,8 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0",
     "yarn": "^1.22.10",
-    "react-i18next": "^11.11.1",
-    "react-redux": "^7.2.4",
-    "redux": "^4.1.0",
-    "i18next": "^20.3.2"
+    "redux-devtools-extension": "^2.13.9",
+    "axios": "^0.21.1"
   },
   "dependencies": {
     "react": "^17.0.1",

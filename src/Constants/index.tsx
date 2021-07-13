@@ -12,4 +12,9 @@ export const RUSSIAN_LANGUAGE = {
   path: '',
 }
 
+export const DEFAULT_LANGUAGE = 'eng'
+
 export const LANGUAGES = [ENGLISH_LANGUAGE, RUSSIAN_LANGUAGE]
+
+export const ENVIRONMENT = process.env.NODE_ENV
+export const PRODUCTION = 'production'

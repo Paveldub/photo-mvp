@@ -1,5 +1,5 @@
 import logo from '../../../assets/images/logo.svg'
-import { LANGUAGES } from '../../Constants/index'
+import { LANGUAGES } from '../../../Constants/index'
 import {
   ContainerWrapper,
   HeaderContainer,

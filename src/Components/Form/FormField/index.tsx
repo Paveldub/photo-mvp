@@ -1,4 +1,4 @@
-export const FormField = (props) => {
+export const FormField = (props: any) => {
   const {
     label,
     tooltip,
