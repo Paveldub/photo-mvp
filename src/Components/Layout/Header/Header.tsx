@@ -1,5 +1,6 @@
 import logo from '../../../assets/images/logo.svg'
 import { LANGUAGES } from '../../../Constants/index'
+import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import {
   ContainerWrapper,
   HeaderContainer,
@@ -12,6 +13,8 @@ import {
 } from './Header.styles'
 
 export const Header = () => {
+  const { onSetLanguage } = useChangeLanguage()
+
   return (
     <>
       <ContainerWrapper>
