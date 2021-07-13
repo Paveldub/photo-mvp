@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form'
-import { FormWrap, FormInput, FormError, FormSelect } from './Form.styles'
+import { FormError, FormWrap } from './Form.styles'
+import { FormField } from './FormField/index'
 
 export const Form = () => {
   const {
@@ -11,7 +12,7 @@ export const Form = () => {
 
   const onSubmit = (data?: any) => alert(JSON.stringify(data))
 
-  const watchFields = watch(['name', 'phone', 'email', 'age', 'select'])
+  const watchFields = watch(['name'])
 
   console.log(watchFields)
 
@@ -19,7 +20,8 @@ export const Form = () => {
     <>
       <h1>Just send me a message.</h1>
       <FormWrap onSubmit={handleSubmit(onSubmit)}>
-        <FormInput
+        <FormField type={'text'} {...register('name', { required: true })} />
+        {/* <FormInput
           placeholder="Имя"
           {...register('name', { required: true })}
         />
@@ -55,7 +57,7 @@ export const Form = () => {
             id="checkbox"
             {...register('age', { required: true })}
           />
-        </label>
+        </label> */}
         {errors.age && <FormError>Обязательное поле</FormError>}
         <button type="submit">Send data</button>
         форму отправили {submitCount} раз

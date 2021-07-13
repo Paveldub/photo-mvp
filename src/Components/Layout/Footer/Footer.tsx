@@ -1,15 +1,14 @@
+import instagramPic from '../../../assets/images/free-icon-instagram-2111463.svg'
+import telegramPic from '../../../assets/images/free-icon-telegram-906377.svg'
 import {
-  FooterHalf,
-  ContainerWrapper,
-  FooterContainer,
-  SocialIconLink,
   AllRightsReverved,
+  ContainerWrapper,
   DropMeAline,
+  FooterContainer,
+  FooterHalf,
+  SocialIconLink,
   SocialIconPic,
 } from './Footer.styles'
-
-import instagramPic from '../../assets/images/free-icon-instagram-2111463.svg'
-import telegramPic from '../../assets/images/free-icon-telegram-906377.svg'
 
 export const Footer = () => {
   return (

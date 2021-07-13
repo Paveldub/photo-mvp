@@ -1,14 +1,14 @@
-import logo from '../../assets/images/logo.svg'
-
+import logo from '../../../assets/images/logo.svg'
+import { LANGUAGES } from '../../Constants/index'
 import {
-  HeaderHalf,
-  HeaderLogo,
-  HeaderNav,
-  HeaderLink,
-  HeaderLogoText,
-  HeaderLogoWrapper,
   ContainerWrapper,
   HeaderContainer,
+  HeaderHalf,
+  HeaderLink,
+  HeaderLogo,
+  HeaderLogoText,
+  HeaderLogoWrapper,
+  HeaderNav,
 } from './Header.styles'
 
 export const Header = () => {
@@ -31,6 +31,19 @@ export const Header = () => {
               <HeaderLink to="/contactus">Contact us</HeaderLink>
             </HeaderNav>
           </HeaderHalf>
+          <div className="header__content-lang">
+            {LANGUAGES.map((item) => (
+              <span
+                key={item.id}
+                onClick={() => onSetLanguage(item)}
+                onKeyDown={() => onSetLanguage(item)}
+                role="button"
+                tabIndex="0"
+              >
+                {item.value}
+              </span>
+            ))}
+          </div>
         </HeaderContainer>
       </ContainerWrapper>
     </>
