@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
   },
 })
 
-export const setCurrentLanguage = (language) =>
+export const setCurrentLanguage = (language: any) =>
   i18n.changeLanguage(language).then()
 
 export const getLanguage = () => i18n.language || DEFAULT_LANGUAGE
