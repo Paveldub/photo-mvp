@@ -10,7 +10,7 @@
 9. google maps
 10. react-hooks-form
 11. swiper-react-slider
-12. i18
+12. i18n
 
 # BACKEND 
 1. Mongo DB
