@@ -26,6 +26,10 @@ export const About = () => {
       <a href="https://kavyar.com/pavel-demidovich">Kavyar</a>
       <h1>Osphilia</h1>
       <a href="https://www.osphilia.co/sessions/by-paveldemidovich">Osphilia</a>
+      <h1>LOVE & MERCY</h1>
+      <a href="https://lovemercymag.com/home/2021/6/27/belarusian-mermaids-by-pavel-demidovich">
+        Mermaids
+      </a>
     </Container>
   )
 }
