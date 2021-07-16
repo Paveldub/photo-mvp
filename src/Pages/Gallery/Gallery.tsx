@@ -10,7 +10,6 @@ export const Gallery = () => {
     <>
       <Container>
         <h1>{t.galleryText}</h1>
-        <span>test</span>
       </Container>
     </>
   )
