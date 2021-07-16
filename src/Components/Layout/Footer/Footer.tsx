@@ -14,22 +14,22 @@ const WORDS = ['allRightReserverText', 'socialsText']
 export const Footer = () => {
   const t = useTranslate(WORDS)
 
+  const SOCIAL_NETWORK_LINKS = [
+    { icon: 'instagram', href: '//www.instagram.com/demidovich.fiml/' },
+    { icon: 'telegram', href: '//t.me/paveldubs' },
+  ]
+
   return (
     <>
       <ContainerWrapper>
         <FooterContainer>
           <FooterHalf>
             <div>{t.socialsText}</div>
-            <SocialIconLink
-              href="//www.instagram.com/demidovich.fiml/"
-              target="_blank"
-            >
-              <Icon icon="instagram" size="25px" />
-            </SocialIconLink>
-
-            <SocialIconLink href="//t.me/paveldubs" target="_blank">
-              <Icon icon="telegram" size="25px" />
-            </SocialIconLink>
+            {SOCIAL_NETWORK_LINKS.map((item) => (
+              <SocialIconLink key={item.icon} href={item.href} target="_blank">
+                <Icon icon={item.icon} size="25px" />
+              </SocialIconLink>
+            ))}
           </FooterHalf>
 
           <FooterHalf>
