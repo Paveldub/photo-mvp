@@ -1,5 +1,5 @@
-import instagramPic from '../../../assets/images/free-icon-instagram-2111463.svg'
-import telegramPic from '../../../assets/images/free-icon-telegram-906377.svg'
+import { useTranslate } from '../../../Hooks/useTranslate'
+import { Icon } from '../../Common/Icon/index'
 import {
   AllRightsReverved,
   ContainerWrapper,
@@ -7,10 +7,11 @@ import {
   FooterContainer,
   FooterHalf,
   SocialIconLink,
-  SocialIconPic,
 } from './Footer.styles'
+const WORDS = ['allRightReserverText']
 
 export const Footer = () => {
+  const t = useTranslate(WORDS)
   return (
     <>
       <ContainerWrapper>
@@ -20,11 +21,11 @@ export const Footer = () => {
               href="//www.instagram.com/demidovich.fiml/"
               target="_blank"
             >
-              <SocialIconPic src={instagramPic} />
+              <Icon icon="instagram" size="25px" />
             </SocialIconLink>
 
             <SocialIconLink href="//t.me/paveldubs" target="_blank">
-              <SocialIconPic src={telegramPic} />
+              <Icon icon="telegram" size="25px" />
             </SocialIconLink>
           </FooterHalf>
 
@@ -36,7 +37,7 @@ export const Footer = () => {
               demidovich.fiml@gmail.com
             </DropMeAline>
             <AllRightsReverved>
-              (C) {new Date().getFullYear()} All right reserved
+              (C) {new Date().getFullYear()} {t.allRightReserverText}
             </AllRightsReverved>
           </FooterHalf>
         </FooterContainer>

@@ -1,10 +1,13 @@
 import logo from '../../../assets/images/logo.svg'
-import { LANGUAGES } from '../../../Constants/index'
+import { LANGUAGES } from '../../../Constants/languages'
 import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
+import { useTranslate } from '../../../Hooks/useTranslate'
 import {
   ContainerWrapper,
   HeaderContainer,
   HeaderHalf,
+  HeaderLanguage,
+  HeaderLanguageSpan,
   HeaderLink,
   HeaderLogo,
   HeaderLogoText,
@@ -12,8 +15,11 @@ import {
   HeaderNav,
 } from './Header.styles'
 
+const WORDS = ['portfolioText', 'aboutText', 'contactUsText']
+
 export const Header = () => {
   const { onSetLanguage } = useChangeLanguage()
+  const t = useTranslate(WORDS)
 
   return (
     <>
@@ -29,14 +35,14 @@ export const Header = () => {
           </HeaderHalf>
           <HeaderHalf>
             <HeaderNav>
-              <HeaderLink to="/portfolio">Portfolio</HeaderLink>
-              <HeaderLink to="/about">About</HeaderLink>
-              <HeaderLink to="/contactus">Contact us</HeaderLink>
+              <HeaderLink to="/portfolio">{t.portfolioText}</HeaderLink>
+              <HeaderLink to="/about">{t.aboutText}</HeaderLink>
+              <HeaderLink to="/contactus">{t.contactUsText}</HeaderLink>
             </HeaderNav>
           </HeaderHalf>
-          <div className="header__content-lang">
+          <HeaderLanguage>
             {LANGUAGES.map((item) => (
-              <span
+              <HeaderLanguageSpan
                 key={item.id}
                 onClick={() => onSetLanguage(item)}
                 onKeyDown={() => onSetLanguage(item)}
@@ -44,9 +50,9 @@ export const Header = () => {
                 tabIndex="0"
               >
                 {item.value}
-              </span>
+              </HeaderLanguageSpan>
             ))}
-          </div>
+          </HeaderLanguage>
         </HeaderContainer>
       </ContainerWrapper>
     </>

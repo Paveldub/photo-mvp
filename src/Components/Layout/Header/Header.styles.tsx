@@ -56,3 +56,19 @@ export const HeaderLink = styled(Link)`
     margin-right: 0;
   }
 `
+
+export const HeaderLanguage = styled('div')`
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+`
+
+export const HeaderLanguageSpan = styled('span')`
+  color: #fff;
+  outline: navajowhite;
+  margin-right: 5px;
+
+  &::last-child {
+    margin-right: 0;
+  }
+`

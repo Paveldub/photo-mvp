@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { useHistory, useLocation } from 'react-router-dom'
-import { RUSSIAN_LANGUAGE } from '../Constants/index'
+import { RUSSIAN_LANGUAGE } from '../Constants/languages'
 import { setLanguage } from '../redux/actions/languageActions'
 import { getPathname } from '../utils/getPathName'
 import { setCurrentLanguage } from '../utils/i18n'

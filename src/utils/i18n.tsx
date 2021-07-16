@@ -1,6 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { DEFAULT_LANGUAGE, RUSSIAN_LANGUAGE } from '../Constants/index'
+import { DEFAULT_LANGUAGE, RUSSIAN_LANGUAGE } from '../Constants/languages'
 import translationsENG from '../translations/translationsENG'
 import translationsRU from '../translations/translationsRU'
 

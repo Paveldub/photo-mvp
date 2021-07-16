@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { ENVIRONMENT, PRODUCTION } from '../Constants/index'
+import { ENVIRONMENT, PRODUCTION } from '../Constants/languages'
 import rootReducer from './reducers'
 
 const middlewares =
