@@ -14,6 +14,9 @@ module.exports = {
     main: './src/index.tsx',
   },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
