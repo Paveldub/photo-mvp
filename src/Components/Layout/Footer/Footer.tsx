@@ -8,15 +8,18 @@ import {
   FooterHalf,
   SocialIconLink,
 } from './Footer.styles'
-const WORDS = ['allRightReserverText']
+
+const WORDS = ['allRightReserverText', 'socialsText']
 
 export const Footer = () => {
   const t = useTranslate(WORDS)
+
   return (
     <>
       <ContainerWrapper>
         <FooterContainer>
           <FooterHalf>
+            <div>{t.socialsText}</div>
             <SocialIconLink
               href="//www.instagram.com/demidovich.fiml/"
               target="_blank"
