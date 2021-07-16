@@ -1,7 +1,7 @@
-import logo from '../../../assets/images/logo.svg'
 import { LANGUAGES } from '../../../Constants/languages'
 import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import { useTranslate } from '../../../Hooks/useTranslate'
+import { Icon } from '../../Common/Icon'
 import {
   ContainerWrapper,
   HeaderContainer,
@@ -9,13 +9,12 @@ import {
   HeaderLanguage,
   HeaderLanguageSpan,
   HeaderLink,
-  HeaderLogo,
   HeaderLogoText,
   HeaderLogoWrapper,
   HeaderNav,
 } from './Header.styles'
 
-const WORDS = ['portfolioText', 'aboutText', 'contactUsText']
+const WORDS = ['galleryText', 'aboutText', 'contactUsText']
 
 export const Header = () => {
   const { onSetLanguage } = useChangeLanguage()
@@ -28,14 +27,14 @@ export const Header = () => {
           <HeaderHalf>
             <HeaderLink to="/">
               <HeaderLogoWrapper>
-                <HeaderLogo src={logo} />
+                <Icon icon="logo" size="25px" />
                 <HeaderLogoText>Film enthusiast</HeaderLogoText>
               </HeaderLogoWrapper>
             </HeaderLink>
           </HeaderHalf>
           <HeaderHalf>
             <HeaderNav>
-              <HeaderLink to="/portfolio">{t.portfolioText}</HeaderLink>
+              <HeaderLink to="/gallery">{t.galleryText}</HeaderLink>
               <HeaderLink to="/about">{t.aboutText}</HeaderLink>
               <HeaderLink to="/contactus">{t.contactUsText}</HeaderLink>
             </HeaderNav>

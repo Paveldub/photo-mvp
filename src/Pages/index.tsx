@@ -1,4 +1,4 @@
-export { Home } from './Home/Home'
 export { About } from './About/About'
-export { Portfolio } from './Portfolio/Portfolio'
 export { ContactUs } from './ContactUs/Contactus'
+export { Gallery } from './Gallery/Gallery'
+export { Home } from './Home/Home'

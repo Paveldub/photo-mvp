@@ -5,7 +5,7 @@ import {
   GlobalStyles,
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
-import { About, ContactUs, Home, Portfolio } from './Pages'
+import { About, ContactUs, Gallery, Home } from './Pages'
 
 export const App = () => {
   return (
@@ -16,7 +16,7 @@ export const App = () => {
         <Header />
         <PagesWrapper>
           <Route path="/" component={Home} exact />
-          <Route path="/portfolio" component={Portfolio} exact />
+          <Route path="/portfolio" component={Gallery} exact />
           <Route path="/about" component={About} exact />
           <Route path="/contactus" component={ContactUs} exact />
         </PagesWrapper>

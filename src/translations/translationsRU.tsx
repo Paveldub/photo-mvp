@@ -1,8 +1,7 @@
 const translationsRU = {
-  mainTitle: 'Я заголовок',
-  portfolioText: 'Portfolio',
-  aboutText: 'About',
-  contactUsText: 'Contact us',
+  galleryText: 'Галерея',
+  aboutText: 'Обо мне',
+  contactUsText: 'Контакты',
   allRightReserverText: 'Все права защищены',
 }
 
