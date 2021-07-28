@@ -32,7 +32,7 @@ export const AgeConfirmationPopup = ({ isOpen, onClose }) => {
             <h2>{t.areYouEighteenText}</h2>
           </div>
           <div className="agreement-popup__btns-wrapper">
-            <div className="agreement-popup__btns-wrap">
+            <div className="agreement-popup__btns-wrap agreement-popup__btns-wrap--active">
               <span
                 onClick={onClose}
                 role="button"
