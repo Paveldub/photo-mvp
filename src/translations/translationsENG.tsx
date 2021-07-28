@@ -4,6 +4,7 @@ const translationsENG = {
   contactUsText: 'Contact us',
   allRightReserverText: 'All rights reserved',
   socialsText: 'Follow my socials:',
+  areYouEighteenText: 'You must be 18 to use this website',
 }
 
 export default translationsENG
