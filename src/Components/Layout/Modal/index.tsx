@@ -3,7 +3,7 @@ import './styles.scss'
 
 Modal.setAppElement('#root')
 
-export const ModalComponent = ({ onClose, children, isOpen, opacity }) => (
+export const ModalComponent = ({ children, isOpen, opacity }) => (
   <Modal
     isOpen={isOpen}
     onAfterOpen={() => {
@@ -16,7 +16,6 @@ export const ModalComponent = ({ onClose, children, isOpen, opacity }) => (
     contentLabel="modal"
     overlayClassName={opacity ? 'overlay overlay__opacity' : 'overlay'}
     // shouldCloseOnOverlayClick={true}
-    onRequestClose={onClose}
   >
     {children}
   </Modal>
