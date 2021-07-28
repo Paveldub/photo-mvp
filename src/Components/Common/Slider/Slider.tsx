@@ -48,7 +48,11 @@ export const Slider = () => {
       {pics &&
         pics.map((pic, index) => {
           return (
-            <SwiperSlide key={`${pic}_${index}`} onClick={() => alert(index)}>
+            <SwiperSlide
+              key={`${pic}_${index}`}
+              onClick={() => alert(index)}
+              className="swiper-slide-blur"
+            >
               <img src={pic} alt="text" />
             </SwiperSlide>
           )

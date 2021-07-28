@@ -4,8 +4,8 @@
   overflow: hidden;
   list-style: none;
   padding: 0;
-  /* Fix of Webkit flickering */
   z-index: 1;
+  margin-top: 50px;
 }
 
 .swiper-container-no-flexbox .swiper-slide {
@@ -534,5 +534,11 @@ button.swiper-pagination-bullet {
     .swiper-slide-active {
       pointer-events: auto;
     }
+  }
+}
+
+.swiper-slide-blur {
+  img {
+    filter: blur(.5rem);
   }
 }
