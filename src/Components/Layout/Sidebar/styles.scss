@@ -7,6 +7,8 @@
   overflow-y: auto;
   min-height: 100%;
   background: #fff;
+  display: flex;
+  flex-direction: column;
 
   &__bg {
     position: fixed;
@@ -16,6 +18,23 @@
     height: 100%;
     background: rgba(#fff, .8);
     z-index: 11;
+  }
+
+  &__lang {
+    margin-top: auto;
+    padding: 20px 20px;
+    background-color: #ccc;
+
+    span {
+      margin-right: 10px;
+      outline: none;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   @media screen and (max-width: 768px) {
@@ -97,7 +116,7 @@
 }
 
 .sidebar-close {
-  padding: 15px 20px;
+  padding: 20px 20px;
   text-align: right;
   cursor: pointer;
 

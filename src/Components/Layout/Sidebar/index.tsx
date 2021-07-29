@@ -1,5 +1,7 @@
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
+import { LANGUAGES } from '../../../Constants/languages'
+import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import { usePreventScroll } from '../../../Hooks/usePreventScroll'
 import { useTranslate } from '../../../Hooks/useTranslate'
 import { Icon } from '../../Common/Icon/index'
@@ -29,6 +31,7 @@ function SideBarBackDrop({ onClose }) {
 export const Sidebar = ({ isOpen, onClose }) => {
   const sideBarClassName = classnames('sidebar', { 'sidebar--active': isOpen })
   const t = useTranslate(WORDS)
+  const { onSetLanguage } = useChangeLanguage()
 
   return (
     <>
@@ -78,6 +81,19 @@ export const Sidebar = ({ isOpen, onClose }) => {
             </Link>
           </li>
         </ul>
+        <div className="sidebar__lang">
+          {LANGUAGES.map((item) => (
+            <span
+              key={item.id}
+              onClick={() => onSetLanguage(item)}
+              onKeyDown={() => onSetLanguage(item)}
+              role="button"
+              tabIndex="0"
+            >
+              {item.value}
+            </span>
+          ))}
+        </div>
       </div>
     </>
   )
