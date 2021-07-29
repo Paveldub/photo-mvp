@@ -71,7 +71,7 @@ export const Header = () => {
         <Sidebar
           isOpen={isSideBarOpen}
           onClose={() => setIsSideBarOpen(false)}
-        />{' '}
+        />
       </ContainerWrapper>
     </>
   )

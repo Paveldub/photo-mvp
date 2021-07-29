@@ -1,13 +1,37 @@
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
+import { usePreventScroll } from '../../../Hooks/usePreventScroll'
 import { Icon } from '../../Common/Icon/index'
 import './styles.scss'
+
+function SideBarBackDrop({ onClose }) {
+  usePreventScroll()
+
+  return (
+    <div
+      onClick={onClose}
+      onKeyDown={onClose}
+      role="button"
+      tabIndex="0"
+      className="sidebar__bg"
+    />
+  )
+}
 
 export const Sidebar = ({ isOpen, onClose }) => {
   const sideBarClassName = classnames('sidebar', { 'sidebar--active': isOpen })
 
   return (
     <>
+      {isOpen && (
+        <SideBarBackDrop
+          onClose={onClose}
+          onKeyDown={onClose}
+          role="button"
+          tabIndex="0"
+        />
+      )}
+
       <div className={sideBarClassName}>
         <div
           className="sidebar-close"
