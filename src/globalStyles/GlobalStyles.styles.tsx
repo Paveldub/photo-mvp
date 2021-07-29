@@ -53,6 +53,7 @@ export const ContentWrapper = styled('div')`
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `
 
 export const PagesWrapper = styled('div')`

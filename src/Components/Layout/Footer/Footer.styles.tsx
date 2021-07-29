@@ -56,4 +56,8 @@ export const DropMeAline = styled('a')`
   color: red;
   font-size: 24px;
   text-decoration: none;
+
+  @media screen and (max-width: 480px) {
+    font-size: 18px;
+  }
 `
