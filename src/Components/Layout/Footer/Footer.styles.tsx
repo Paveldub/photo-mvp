@@ -5,7 +5,6 @@ export const ContainerWrapper = styled('footer')`
   box-shadow: 0 2px 15px rgba(0, 44, 84, 0.25);
   width: 100%;
   background-color: #ccc;
-  z-index: 10;
   margin-top: auto;
 `
 
@@ -15,12 +14,20 @@ export const FooterContainer = styled('div')`
   width: 100%;
   display: flex;
   padding: 0 15px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const FooterHalf = styled('div')`
   width: 50%;
   background: #ccc;
   padding: 20px 10px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `
 
 export const SocialIconLink = styled('a')`

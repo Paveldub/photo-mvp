@@ -1,7 +1,10 @@
+import classnames from 'classnames'
+import { useState } from 'react'
 import { LANGUAGES } from '../../../Constants/languages'
 import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import { useTranslate } from '../../../Hooks/useTranslate'
 import { Icon } from '../../Common/Icon'
+import { Sidebar } from '../Sidebar/index'
 import {
   ContainerWrapper,
   HeaderContainer,
@@ -13,10 +16,13 @@ import {
   HeaderLogoWrapper,
   HeaderNav,
 } from './Header.styles'
-
+import './styles.scss'
 const WORDS = ['galleryText', 'aboutText', 'contactUsText']
 
 export const Header = () => {
+  const [isSideBarOpen, setIsSideBarOpen] = useState(false)
+  const toggleSideBar = () => setIsSideBarOpen((prevState) => !prevState)
+
   const { onSetLanguage } = useChangeLanguage()
   const t = useTranslate(WORDS)
 
@@ -52,7 +58,20 @@ export const Header = () => {
               </HeaderLanguageSpan>
             ))}
           </HeaderLanguage>
+          <div
+            className={classnames('menu-btn', { open: isSideBarOpen })}
+            onClick={toggleSideBar}
+            onKeyDown={toggleSideBar}
+            role="button"
+            tabIndex="0"
+          >
+            <div className="menu-btn__burger" />
+          </div>
         </HeaderContainer>
+        <Sidebar
+          isOpen={isSideBarOpen}
+          onClose={() => setIsSideBarOpen(false)}
+        />{' '}
       </ContainerWrapper>
     </>
   )

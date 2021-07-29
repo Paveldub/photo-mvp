@@ -15,6 +15,7 @@ export const HeaderContainer = styled('div')`
   width: 100%;
   display: flex;
   padding: 0 15px;
+  align-items: center;
 `
 
 export const HeaderHalf = styled('div')`
@@ -42,6 +43,10 @@ export const HeaderNav = styled('nav')`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const HeaderList = styled('ul')`
@@ -61,12 +66,20 @@ export const HeaderLanguage = styled('div')`
   display: flex;
   align-items: center;
   margin-left: 20px;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
+
+export const Sidebar = styled('div')``
 
 export const HeaderLanguageSpan = styled('span')`
   color: #fff;
   outline: navajowhite;
   margin-right: 5px;
+  text-transform: uppercase;
 
   &::last-child {
     margin-right: 0;

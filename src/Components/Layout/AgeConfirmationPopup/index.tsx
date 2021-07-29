@@ -43,13 +43,14 @@ export const AgeConfirmationPopup = ({ isOpen, onClose }) => {
               </span>
             </div>
             <div className="agreement-popup__btns-wrap">
-              <a
-                href="https://www.google.com/"
-                target="_blank"
-                rel="noreferrer"
+              <span
+                onClick={onClose}
+                role="button"
+                tabIndex="0"
+                onKeyDown={onClose}
               >
                 {t.unconfirmedText}
-              </a>
+              </span>
             </div>
           </div>
         </div>
