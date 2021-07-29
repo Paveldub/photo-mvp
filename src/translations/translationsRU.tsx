@@ -7,6 +7,10 @@ const translationsRU = {
   areYouEighteenText: 'Вам исполнилось 18+ лет?',
   confirmedText: 'Подтверждаю, что мне 18',
   unconfirmedText: 'Нет',
+  mainPageText: 'Главная',
+  galleryPageText: 'Галерея',
+  aboutPageText: 'Обо мне',
+  contactPageText: 'Контакты',
 }
 
 export default translationsRU

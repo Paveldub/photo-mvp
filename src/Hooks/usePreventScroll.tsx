@@ -1,6 +1,6 @@
 import { useLayoutEffect } from 'react'
 
-export function usePreventScroll() {
+export const usePreventScroll = () => {
   const bodyFixPosition = () => {
     document.body.style.overflow = 'hidden'
   }

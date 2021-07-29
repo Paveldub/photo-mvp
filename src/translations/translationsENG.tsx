@@ -7,6 +7,10 @@ const translationsENG = {
   areYouEighteenText: 'You must be 18 to use this website',
   confirmedText: 'I am over 18',
   unconfirmedText: 'Exit',
+  mainPageText: 'Home page',
+  galleryPageText: 'Gallery',
+  aboutPageText: 'About',
+  contactPageText: 'Contacts',
 }
 
 export default translationsENG

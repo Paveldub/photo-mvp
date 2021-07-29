@@ -1,8 +1,16 @@
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
 import { usePreventScroll } from '../../../Hooks/usePreventScroll'
+import { useTranslate } from '../../../Hooks/useTranslate'
 import { Icon } from '../../Common/Icon/index'
 import './styles.scss'
+
+const WORDS = [
+  'mainPageText',
+  'galleryPageText',
+  'aboutPageText',
+  'contactPageText',
+]
 
 function SideBarBackDrop({ onClose }) {
   usePreventScroll()
@@ -20,6 +28,7 @@ function SideBarBackDrop({ onClose }) {
 
 export const Sidebar = ({ isOpen, onClose }) => {
   const sideBarClassName = classnames('sidebar', { 'sidebar--active': isOpen })
+  const t = useTranslate(WORDS)
 
   return (
     <>
@@ -50,22 +59,22 @@ export const Sidebar = ({ isOpen, onClose }) => {
         <ul className="sidebar__list">
           <li className="sidebar__item">
             <Link to="/" onKeyDown={onClose} onClick={onClose}>
-              Home
+              {t.mainPageText}
             </Link>
           </li>
           <li className="sidebar__item">
             <Link to="/gallery" onKeyDown={onClose} onClick={onClose}>
-              Gallery
+              {t.galleryPageText}
             </Link>
           </li>
           <li className="sidebar__item">
             <Link to="/about" onKeyDown={onClose} onClick={onClose}>
-              About
+              {t.aboutPageText}
             </Link>
           </li>
           <li className="sidebar__item">
             <Link to="/contactus" onKeyDown={onClose} onClick={onClose}>
-              Contacts
+              {t.contactPageText}
             </Link>
           </li>
         </ul>
