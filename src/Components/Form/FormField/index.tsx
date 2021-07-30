@@ -1,18 +1,10 @@
-export const FormField = (props: any) => {
-  const {
-    label,
-    tooltip,
-    name,
-    register,
-    type,
-    onChange,
-    maxLength,
-    onBlur,
-    // error,
-  } = props
+import './styles.scss'
+
+export const FormField = (props) => {
+  const { label, name, register, type, onChange, maxLength, onBlur } = props
 
   return (
-    <div>
+    <div className="form__input">
       <label>
         {label}
 
@@ -25,13 +17,6 @@ export const FormField = (props: any) => {
           onBlur={onBlur}
         />
       </label>
-
-      {tooltip && (
-        <div className="hint-text">
-          <span>{tooltip}</span>
-        </div>
-      )}
-      {/* {error && <ErrorMessage message={error.message} />} */}
     </div>
   )
 }

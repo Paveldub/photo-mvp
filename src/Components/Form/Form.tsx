@@ -1,66 +1,95 @@
+import { useMemo } from 'react'
 import { useForm } from 'react-hook-form'
-import { FormError, FormWrap } from './Form.styles'
+import { useTranslate } from '../../Hooks/useTranslate'
+import { formatPhoneNumber } from '../../services/parcers'
+import { FormWrap } from './Form.styles'
 import { FormField } from './FormField/index'
+import { PhoneField } from './PhoneFiled'
+import { SelectField } from './SelectField'
+
+const WORDS = [
+  'formFirstNameText',
+  'errorRequiredText',
+  'formEmailText',
+  'formPhoneText',
+  'contactUsTitleText',
+  'sendMessageText',
+]
+
+export const TYPE_OF_PHOTOGRAPHY = [
+  {
+    value: 'nude',
+    title: 'nudeText',
+  },
+  { value: 'portrait', title: 'portraitText' },
+]
 
 export const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, submitCount },
-    watch,
+    formState: { errors },
+    control,
+    setValue,
   } = useForm({ mode: 'onBlur' })
 
-  const onSubmit = (data?: any) => alert(JSON.stringify(data))
+  const onSubmit = (data) => console.log(JSON.stringify(data))
 
-  const watchFields = watch(['name'])
+  const t = useTranslate(WORDS)
 
-  console.log(watchFields)
+  const typeOfPhotography = useMemo(
+    () =>
+      TYPE_OF_PHOTOGRAPHY.map((item) => ({
+        value: item.value,
+        title: item.title,
+      })),
+    []
+  )
 
   return (
     <>
-      <h1>Just send me a message.</h1>
+      <h1>{t.contactUsTitleText}</h1>
       <FormWrap onSubmit={handleSubmit(onSubmit)}>
-        <FormField type={'text'} {...register('name', { required: true })} />
-        {/* <FormInput
-          placeholder="Имя"
-          {...register('name', { required: true })}
+        <FormField
+          label={t.formFirstNameText}
+          {...register('firstName', { required: true })}
+          error={errors.first_name}
         />
-        {errors.name && <FormError>Обязательное поле</FormError>}
-        <FormInput
-          placeholder="Телефон"
-          {...register('phone', {
-            required: true,
-            pattern: /\d?\d/,
-            min: 10,
-          })}
-        />
-        {errors.phone && (
-          <FormError>Обязательное поле. Max 10 символов</FormError>
-        )}
-        <FormInput
-          placeholder="Email"
+        {errors.firstName && <p>{t.errorRequiredText}</p>}
+        <FormField
+          label={t.formEmailText}
           {...register('email', { required: true })}
+          error={errors.email}
         />
-        {errors.email && <FormError>Обязательное поле</FormError>}
-        <FormSelect {...register('select', { required: true })}>
-          <option value="" hidden>
-            Выберите тип съемки
-          </option>
-          <option value="nude">Nude</option>
-          <option value="portrait">Portrain</option>
-        </FormSelect>
-        {errors.select && <FormError>Обязательное поле</FormError>}
-        <label>
+        {errors.email && <p>{t.errorRequiredText}</p>}
+        <PhoneField
+          label={t.formPhoneText}
+          control={control}
+          {...register('phone', { required: true })}
+          onChange={(e) => {
+            setValue('phone', formatPhoneNumber(e.target.value))
+          }}
+        />
+        {errors.phone && <p>{t.errorRequiredText}</p>}
+
+        <SelectField
+          label={t.regionText}
+          error={errors.region_registered}
+          {...register('chooseTypeOfPhotography', { required: true })}
+          options={typeOfPhotography}
+        />
+        {errors.chooseTypeOfPhotography && <p>{t.errorRequiredText}</p>}
+
+        <button type="submit">{t.sendMessageText}</button>
+
+        {/* <label>
           Вы подтверждаете, что Вам 18+ лет?
           <input
             type="checkbox"
             id="checkbox"
             {...register('age', { required: true })}
           />
-        </label> */}
-        {errors.age && <FormError>Обязательное поле</FormError>}
-        <button type="submit">Send data</button>
-        форму отправили {submitCount} раз
+        </label> * */}
       </FormWrap>
     </>
   )

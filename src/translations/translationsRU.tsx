@@ -11,6 +11,14 @@ const translationsRU = {
   galleryPageText: 'Галерея',
   aboutPageText: 'Обо мне',
   contactPageText: 'Контакты',
+  errorRequiredText: 'Обязательное поле для заполнения',
+  formFirstNameText: 'Имя',
+  formEmailText: 'Почта',
+  formPhoneText: 'Номер телефона',
+  contactUsTitleText: 'Связаться со мной',
+  sendMessageText: 'Отправить сообщение',
+  nudeText: 'Ню',
+  portraitText: 'Портрет',
 }
 
 export default translationsRU

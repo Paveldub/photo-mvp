@@ -11,6 +11,14 @@ const translationsENG = {
   galleryPageText: 'Gallery',
   aboutPageText: 'About',
   contactPageText: 'Contacts',
+  errorRequiredText: 'This field is required',
+  formFirstNameText: 'Name',
+  formEmailText: 'Email',
+  formPhoneText: 'Phone number',
+  contactUsTitleText: 'Drop me a line',
+  sendMessageText: 'Send message',
+  nudeText: 'Nude',
+  portraitText: 'Portrait',
 }
 
 export default translationsENG
