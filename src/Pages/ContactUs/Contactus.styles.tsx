@@ -6,3 +6,10 @@ export const Container = styled('div')`
   margin: 0 auto;
   padding: 0 15px;
 `
+
+export const FormWrapper = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`

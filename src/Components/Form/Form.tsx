@@ -56,12 +56,7 @@ export const Form = () => {
           error={errors.first_name}
         />
         {errors.firstName && <p>{t.errorRequiredText}</p>}
-        <FormField
-          label={t.formEmailText}
-          {...register('email', { required: true })}
-          error={errors.email}
-        />
-        {errors.email && <p>{t.errorRequiredText}</p>}
+
         <PhoneField
           label={t.formPhoneText}
           control={control}
@@ -71,6 +66,13 @@ export const Form = () => {
           }}
         />
         {errors.phone && <p>{t.errorRequiredText}</p>}
+
+        <FormField
+          label={t.formEmailText}
+          {...register('email', { required: true })}
+          error={errors.email}
+        />
+        {errors.email && <p>{t.errorRequiredText}</p>}
 
         <SelectField
           label={t.regionText}

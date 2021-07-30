@@ -1,11 +1,13 @@
-import { GoogleMap, Form } from '../../Components'
-import { Container } from './Contactus.styles'
+import { Form, GoogleMap } from '../../Components'
+import { Container, FormWrapper } from './Contactus.styles'
 
 export const ContactUs = () => {
   return (
     <>
       <Container>
-        <Form />
+        <FormWrapper>
+          <Form />
+        </FormWrapper>
       </Container>
 
       <GoogleMap />
