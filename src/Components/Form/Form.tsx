@@ -17,6 +17,7 @@ const WORDS = [
   'sendMessageText',
   'checkboxAgeText',
   'ageCheckboxConfirmation',
+  'typeOfPhotographyText',
 ]
 
 export const TYPE_OF_PHOTOGRAPHY = [
@@ -86,7 +87,7 @@ export const Form = () => {
         {errors.email && <p>{t.errorRequiredText}</p>}
 
         <SelectField
-          label={t.regionText}
+          label={t.typeOfPhotographyText}
           error={errors.region_registered}
           {...register('chooseTypeOfPhotography', { required: true })}
           options={typeOfPhotography}

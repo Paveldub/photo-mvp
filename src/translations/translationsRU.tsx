@@ -21,6 +21,7 @@ const translationsRU = {
   portraitText: 'Портрет',
   checkboxAgeText: 'Мне 18',
   ageCheckboxConfirmation: 'Подтвердите Ваш возраст',
+  typeOfPhotographyText: 'Выберете тип съмки',
 }
 
 export default translationsRU

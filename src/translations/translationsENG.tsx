@@ -1,7 +1,7 @@
 const translationsENG = {
   galleryText: 'Gallery',
   aboutText: 'About',
-  contactUsText: 'Contact us',
+  contactUsText: 'Contact',
   allRightReserverText: 'All rights reserved',
   socialsText: 'Follow my socials:',
   areYouEighteenText: 'You must be 18 to use this website',
@@ -21,6 +21,7 @@ const translationsENG = {
   portraitText: 'Portrait',
   checkboxAgeText: 'I am 18',
   ageCheckboxConfirmation: 'Сonfirm your age',
+  typeOfPhotographyText: 'Type of photography',
 }
 
 export default translationsENG

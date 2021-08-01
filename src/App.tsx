@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Route } from 'react-router-dom'
 import { Footer, Header } from './Components'
 import { AgeConfirmationPopup } from './Components/Layout/AgeConfirmationPopup/index'
@@ -8,6 +8,7 @@ import {
   GALLERY_PATH,
   HOME_PATH,
 } from './Constants/paths'
+import firebase from './firebase'
 import {
   ContentWrapper,
   GlobalStyles,
@@ -30,6 +31,15 @@ export const App = () => {
     setIsAgeConfirmation(!isAgeConfirmation)
     localStorage.setItem('ageConfirmation', 'CONFIRMED')
   }
+
+  useEffect(() => {
+    const msg = firebase.messaging()
+
+    msg.requestPermission().then(() => {
+      return msg.getToken()
+    })
+    // .then((data) => console.log('token', data))
+  })
 
   return (
     <>
