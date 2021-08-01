@@ -22,6 +22,10 @@ const translationsENG = {
   checkboxAgeText: 'I am 18',
   ageCheckboxConfirmation: 'Сonfirm your age',
   typeOfPhotographyText: 'Type of photography',
+  homePageTitle: 'Home page',
+  galleryPageTitle: 'Gallery page',
+  aboutPageTitle: 'About page',
+  contactPageTitle: 'Contact page',
 }
 
 export default translationsENG

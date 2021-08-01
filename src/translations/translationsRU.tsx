@@ -22,6 +22,10 @@ const translationsRU = {
   checkboxAgeText: 'Мне 18',
   ageCheckboxConfirmation: 'Подтвердите Ваш возраст',
   typeOfPhotographyText: 'Выберете тип съмки',
+  homePageTitle: 'Главная страница',
+  galleryPageTitle: 'Галлерея',
+  aboutPageTitle: 'Обо мне',
+  contactPageTitle: 'Контакты',
 }
 
 export default translationsRU

@@ -1,3 +1,5 @@
-export function getPathname(location: any) {
-  return location.pathname?.replace('/eng', '')?.substring(1)
+export function getPathname(location) {
+  return location.pathname.includes('/eng')
+    ? location.pathname.substring(3)
+    : location.pathname
 }

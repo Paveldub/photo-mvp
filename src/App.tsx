@@ -15,6 +15,10 @@ import {
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 import { About, ContactUs, Gallery, Home } from './Pages'
+import { Helmet } from 'react-helmet'
+import { useTranslation } from 'react-i18next'
+import { STEPS } from './Constants/steps'
+import { getPathname } from './utils/getPathName'
 
 export {
   ABOUT_PATH,
@@ -23,7 +27,19 @@ export {
   HOME_PATH,
 } from './Constants/paths'
 
+const titles = {
+  1: 'homePageTitle',
+  2: 'galleryPageTitle',
+  3: 'aboutPageTitle',
+  4: 'contactPageTitle',
+}
+
 export const App = () => {
+  const { t } = useTranslation()
+  const pageStep = getPathname(location)
+
+  const step = STEPS[pageStep]
+
   const [isAgeConfirmation, setIsAgeConfirmation] = useState(true)
   const isLocalStorage = localStorage.getItem('ageConfirmation') === null
 
@@ -44,6 +60,12 @@ export const App = () => {
   return (
     <>
       <GlobalStyles />
+
+      <Helmet>
+        <Helmet>
+          <title>{t[titles[step]]}</title>
+        </Helmet>
+      </Helmet>
 
       {isAgeConfirmation && isLocalStorage ? (
         <AgeConfirmationPopup
