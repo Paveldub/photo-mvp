@@ -16,6 +16,7 @@ const WORDS = [
   'contactUsTitleText',
   'sendMessageText',
   'checkboxAgeText',
+  'ageCheckboxConfirmation',
 ]
 
 export const TYPE_OF_PHOTOGRAPHY = [
@@ -26,16 +27,27 @@ export const TYPE_OF_PHOTOGRAPHY = [
   { value: 'portrait', title: 'portraitText' },
 ]
 
-export const Form = () => {
-  const { register, handleSubmit, control, setValue, formState } = useForm({
-    mode: 'onBlur',
-  })
+const NUDE = 'nude'
+// const PORTRAIT = 'portrait'
 
-  const { errors } = formState
+export const Form = () => {
+  const t = useTranslate(WORDS)
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+    setValue,
+    watch,
+  } = useForm({ mode: 'onBlur' })
 
   const onSubmit = (data) => console.log(JSON.stringify(data))
 
-  const t = useTranslate(WORDS)
+  const chooseType = watch('chooseTypeOfPhotography')
+
+  const isNude = chooseType === NUDE
+  // const isPortrait = chooseType === PORTRAIT
 
   const typeOfPhotography = useMemo(
     () =>
@@ -81,20 +93,20 @@ export const Form = () => {
         />
         {errors.chooseTypeOfPhotography && <p>{t.errorRequiredText}</p>}
 
-        <label>
-          <input
-            type="checkbox"
-            id="checkbox"
-            {...register('age', { required: true })}
-          />
-          Вы подтверждаете, что Вам 18+ лет?
-        </label>
-        {errors.age && <p>{t.errorRequiredText}</p>}
+        {isNude && (
+          <label>
+            <input
+              type="checkbox"
+              id="checkbox"
+              {...register('age', { required: true })}
+            />
+            {t.checkboxAgeText}
+          </label>
+        )}
 
-        <SubmitButton
-          label={t.sendMessageText}
-          submitting={formState.isSubmitting}
-        />
+        {errors.age && <p>{t.ageCheckboxConfirmation}</p>}
+
+        <SubmitButton label={t.sendMessageText} />
       </FormWrap>
     </>
   )

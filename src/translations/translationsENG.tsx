@@ -20,6 +20,7 @@ const translationsENG = {
   nudeText: 'Nude',
   portraitText: 'Portrait',
   checkboxAgeText: 'I am 18',
+  ageCheckboxConfirmation: 'Сonfirm your age',
 }
 
 export default translationsENG
