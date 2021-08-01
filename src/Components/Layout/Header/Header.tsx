@@ -42,7 +42,7 @@ export const Header = () => {
             <HeaderNav>
               <HeaderLink to="/gallery">{t.galleryText}</HeaderLink>
               <HeaderLink to="/about">{t.aboutText}</HeaderLink>
-              <HeaderLink to="/contactus">{t.contactUsText}</HeaderLink>
+              <HeaderLink to="/contact">{t.contactUsText}</HeaderLink>
             </HeaderNav>
           </HeaderHalf>
           <HeaderLanguage>

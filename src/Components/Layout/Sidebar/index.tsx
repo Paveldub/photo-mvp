@@ -76,7 +76,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
             </Link>
           </li>
           <li className="sidebar__item">
-            <Link to="/contactus" onKeyDown={onClose} onClick={onClose}>
+            <Link to="/contact" onKeyDown={onClose} onClick={onClose}>
               {t.contactPageText}
             </Link>
           </li>

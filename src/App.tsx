@@ -38,6 +38,8 @@ export const App = () => {
   const { t } = useTranslation()
   const pageStep = getPathname(location)
 
+  console.log(location)
+
   const step = STEPS[pageStep]
 
   const [isAgeConfirmation, setIsAgeConfirmation] = useState(true)
