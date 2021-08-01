@@ -6,6 +6,7 @@ import { FormWrap } from './Form.styles'
 import { FormField } from './FormField/index'
 import { PhoneField } from './PhoneFiled'
 import { SelectField } from './SelectField'
+import { SubmitButton } from './SubmitButton'
 
 const WORDS = [
   'formFirstNameText',
@@ -14,6 +15,7 @@ const WORDS = [
   'formPhoneText',
   'contactUsTitleText',
   'sendMessageText',
+  'checkboxAgeText',
 ]
 
 export const TYPE_OF_PHOTOGRAPHY = [
@@ -25,13 +27,11 @@ export const TYPE_OF_PHOTOGRAPHY = [
 ]
 
 export const Form = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    control,
-    setValue,
-  } = useForm({ mode: 'onBlur' })
+  const { register, handleSubmit, control, setValue, formState } = useForm({
+    mode: 'onBlur',
+  })
+
+  const { errors } = formState
 
   const onSubmit = (data) => console.log(JSON.stringify(data))
 
@@ -53,7 +53,6 @@ export const Form = () => {
         <FormField
           label={t.formFirstNameText}
           {...register('firstName', { required: true })}
-          error={errors.first_name}
         />
         {errors.firstName && <p>{t.errorRequiredText}</p>}
 
@@ -82,16 +81,20 @@ export const Form = () => {
         />
         {errors.chooseTypeOfPhotography && <p>{t.errorRequiredText}</p>}
 
-        <button type="submit">{t.sendMessageText}</button>
-
-        {/* <label>
-          Вы подтверждаете, что Вам 18+ лет?
+        <label>
           <input
             type="checkbox"
             id="checkbox"
             {...register('age', { required: true })}
           />
-        </label> * */}
+          Вы подтверждаете, что Вам 18+ лет?
+        </label>
+        {errors.age && <p>{t.errorRequiredText}</p>}
+
+        <SubmitButton
+          label={t.sendMessageText}
+          submitting={formState.isSubmitting}
+        />
       </FormWrap>
     </>
   )

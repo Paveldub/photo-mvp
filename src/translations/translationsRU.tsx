@@ -19,6 +19,7 @@ const translationsRU = {
   sendMessageText: 'Отправить сообщение',
   nudeText: 'Ню',
   portraitText: 'Портрет',
+  checkboxAgeText: 'Мне 18',
 }
 
 export default translationsRU
