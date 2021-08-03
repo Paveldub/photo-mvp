@@ -26,6 +26,9 @@ const translationsENG = {
   galleryPageTitle: 'Gallery page',
   aboutPageTitle: 'About page',
   contactPageTitle: 'Contact page',
+  errorIncorrectPhoneNumberText: 'Is your phone number is correct?!',
+  errorRequiredSelectText: 'Choose from the list',
+  errorCorrectValueText: 'Check the correct data',
 }
 
 export default translationsENG

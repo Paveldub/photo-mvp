@@ -1,13 +1,20 @@
+import classnames from 'classnames'
 import { Controller } from 'react-hook-form'
 import InputMask from 'react-input-mask'
+import { PREFIX_PHONE_CODE } from '../../../Constants/phoneNumbers'
+import { ErrorMessage } from '../../Common/ErrorMessage'
 
 const MAX_LENGTH = 17
 
 export const PhoneField = (props) => {
-  const { label, name, register, control, onChange } = props
+  const { label, name, register, error, control, onChange } = props
+
+  const phoneInputClassName = classnames('form__input', {
+    'form__input--active': error,
+  })
 
   return (
-    <div className="phone">
+    <div className={phoneInputClassName}>
       <label>
         {label}
         <div className="phone-wrap">
@@ -19,7 +26,7 @@ export const PhoneField = (props) => {
             render={(props) => (
               <InputMask
                 alwaysShowMask
-                mask="+999 99 999-99-99"
+                mask="99 999-99-99"
                 maskChar=""
                 {...props}
                 onChange={onChange}
@@ -31,8 +38,11 @@ export const PhoneField = (props) => {
             )}
             defaultValue=""
           />
+          <span className="phone-num">+{PREFIX_PHONE_CODE}</span>
         </div>
       </label>
+
+      {error && <ErrorMessage message={error.message} />}
     </div>
   )
 }

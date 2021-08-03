@@ -1,14 +1,22 @@
+import classnames from 'classnames'
+import { ErrorMessage } from '../../Common/ErrorMessage'
 import './styles.scss'
 
 export const FormField = (props) => {
-  const { label, name, register, type, onChange, maxLength, onBlur } = props
+  const { label, name, register, error, type, onChange, maxLength, onBlur } =
+    props
+
+  const formInputClassName = classnames('form__input', {
+    'form__input--active': error,
+  })
 
   return (
-    <div className="form__input">
+    <div className={formInputClassName}>
       <label>
         {label}
 
         <input
+          {...props}
           maxLength={maxLength}
           name={name}
           ref={register}
@@ -17,6 +25,8 @@ export const FormField = (props) => {
           onBlur={onBlur}
         />
       </label>
+
+      {error && <ErrorMessage message={error.message} />}
     </div>
   )
 }

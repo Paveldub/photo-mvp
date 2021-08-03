@@ -3,6 +3,9 @@ export const required = (value) =>
     ? undefined
     : 'errorRequiredText'
 
+export const requiredSelect = (value) =>
+  value || typeof value === 'number' ? undefined : 'errorRequiredSelectText'
+
 export const onlyNumbers = (value) =>
   value && /^[0-9]*[.,|0-9]{1}[0-9]*$/.test(value)
     ? undefined

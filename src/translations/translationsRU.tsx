@@ -26,6 +26,9 @@ const translationsRU = {
   galleryPageTitle: 'Галлерея',
   aboutPageTitle: 'Обо мне',
   contactPageTitle: 'Контакты',
+  errorIncorrectPhoneNumberText: 'Проверьте правильность номера телефона',
+  errorRequiredSelectText: 'Пожалуйста, выберите вариант из списка',
+  errorCorrectValueText: 'Проверьте правильность данных',
 }
 
 export default translationsRU

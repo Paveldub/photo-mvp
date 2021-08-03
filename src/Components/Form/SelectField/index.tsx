@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next'
+import { ErrorMessage } from '../../Common/ErrorMessage'
 
 export const SelectField = (props) => {
   const { t } = useTranslation()
 
-  const { label, options, register, name, onBlur } = props
+  const { label, options, error, register, name, onBlur } = props
 
   return (
     <div className="general__select">
@@ -18,6 +19,8 @@ export const SelectField = (props) => {
           ))}
         </select>
       </div>
+
+      {error && <ErrorMessage message={error.message} />}
     </div>
   )
 }

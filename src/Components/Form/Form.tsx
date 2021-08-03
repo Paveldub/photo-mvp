@@ -8,6 +8,7 @@ import { PhoneField } from './PhoneFiled'
 import { SelectField } from './SelectField'
 import { SubmitButton } from './SubmitButton'
 
+const NUDE = 'nude'
 const WORDS = [
   'formFirstNameText',
   'errorRequiredText',
@@ -28,9 +29,6 @@ export const TYPE_OF_PHOTOGRAPHY = [
   { value: 'portrait', title: 'portraitText' },
 ]
 
-const NUDE = 'nude'
-// const PORTRAIT = 'portrait'
-
 export const Form = () => {
   const t = useTranslate(WORDS)
 
@@ -44,11 +42,8 @@ export const Form = () => {
   } = useForm({ mode: 'onBlur' })
 
   const onSubmit = (data) => console.log(JSON.stringify(data))
-
   const chooseType = watch('chooseTypeOfPhotography')
-
   const isNude = chooseType === NUDE
-  // const isPortrait = chooseType === PORTRAIT
 
   const typeOfPhotography = useMemo(
     () =>
