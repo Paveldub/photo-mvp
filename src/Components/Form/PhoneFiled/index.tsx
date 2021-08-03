@@ -7,7 +7,8 @@ import { ErrorMessage } from '../../Common/ErrorMessage'
 const MAX_LENGTH = 17
 
 export const PhoneField = (props) => {
-  const { label, name, register, error, control, onChange } = props
+  const { label, name, register, error, control, onChange, autoComplete } =
+    props
 
   const phoneInputClassName = classnames('form__input', {
     'form__input--active': error,
@@ -23,6 +24,7 @@ export const PhoneField = (props) => {
             rules={register}
             control={control}
             shouldUnregister={true}
+            autoComplete={autoComplete}
             render={(props) => (
               <InputMask
                 alwaysShowMask

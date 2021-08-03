@@ -6,6 +6,10 @@
   font-size: 12px;
   line-height: 15px;
 
+  p {
+    color: red;
+  }
+
   &--active {
     display: block;
   }

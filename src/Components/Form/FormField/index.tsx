@@ -1,6 +1,5 @@
 import classnames from 'classnames'
 import { ErrorMessage } from '../../Common/ErrorMessage'
-import './styles.scss'
 
 export const FormField = (props) => {
   const { label, name, register, error, type, onChange, maxLength, onBlur } =
@@ -16,7 +15,6 @@ export const FormField = (props) => {
         {label}
 
         <input
-          {...props}
           maxLength={maxLength}
           name={name}
           ref={register}

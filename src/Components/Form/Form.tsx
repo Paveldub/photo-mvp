@@ -1,9 +1,10 @@
-import { useMemo } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslate } from '../../Hooks/useTranslate'
+import { FIELDS } from '../../Pages/ContactUs/contact-us-fields'
 import { formatPhoneNumber } from '../../services/parcers'
+import { createTriggerValidationFunction } from '../../utils'
 import { FormWrap } from './Form.styles'
-import { FormField } from './FormField/index'
+import { FormField } from './FormField'
 import { PhoneField } from './PhoneFiled'
 import { SelectField } from './SelectField'
 import { SubmitButton } from './SubmitButton'
@@ -21,73 +22,67 @@ const WORDS = [
   'typeOfPhotographyText',
 ]
 
-export const TYPE_OF_PHOTOGRAPHY = [
-  {
-    value: 'nude',
-    title: 'nudeText',
-  },
-  { value: 'portrait', title: 'portraitText' },
-]
-
 export const Form = () => {
   const t = useTranslate(WORDS)
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    control,
-    setValue,
-    watch,
-  } = useForm({ mode: 'onBlur' })
+  const { register, handleSubmit, errors, control, trigger, setValue, watch } =
+    useForm({
+      mode: 'onBlur',
+      reValidateMode: 'onBlur',
+      shouldFocusError: true,
+      shouldUnregister: false,
+    })
+
+  const triggerValidation = createTriggerValidationFunction(errors, trigger)
 
   const onSubmit = (data) => console.log(JSON.stringify(data))
-  const chooseType = watch('chooseTypeOfPhotography')
+  const chooseType = watch('type_of_photography')
   const isNude = chooseType === NUDE
-
-  const typeOfPhotography = useMemo(
-    () =>
-      TYPE_OF_PHOTOGRAPHY.map((item) => ({
-        value: item.value,
-        title: item.title,
-      })),
-    []
-  )
 
   return (
     <>
       <h1>{t.contactUsTitleText}</h1>
       <FormWrap onSubmit={handleSubmit(onSubmit)}>
         <FormField
+          {...FIELDS.first_name}
           label={t.formFirstNameText}
-          {...register('firstName', { required: true })}
-        />
-        {errors.firstName && <p>{t.errorRequiredText}</p>}
-
-        <PhoneField
-          label={t.formPhoneText}
-          control={control}
-          {...register('phone', { required: true })}
-          onChange={(e) => {
-            setValue('phone', formatPhoneNumber(e.target.value))
+          error={errors.first_name}
+          register={register(FIELDS.first_name.register)}
+          onChange={() => {
+            triggerValidation(FIELDS.first_name.name)
           }}
         />
-        {errors.phone && <p>{t.errorRequiredText}</p>}
+
+        <PhoneField
+          {...FIELDS.phone_number}
+          control={control}
+          label={t.formPhoneText}
+          error={errors.phone_number}
+          onChange={(e) => {
+            setValue('phone_number', formatPhoneNumber(e.target.value))
+            triggerValidation(FIELDS.phone_number.name)
+          }}
+        />
 
         <FormField
+          {...FIELDS.email}
           label={t.formEmailText}
-          {...register('email', { required: true })}
           error={errors.email}
+          register={register(FIELDS.email.register)}
+          onChange={() => {
+            triggerValidation(FIELDS.email.name)
+          }}
         />
-        {errors.email && <p>{t.errorRequiredText}</p>}
 
         <SelectField
+          {...FIELDS.type_of_photography}
           label={t.typeOfPhotographyText}
-          error={errors.region_registered}
-          {...register('chooseTypeOfPhotography', { required: true })}
-          options={typeOfPhotography}
+          error={errors.type_of_photography}
+          register={register(FIELDS.type_of_photography.register)}
+          onChange={() => {
+            triggerValidation(FIELDS.type_of_photography.name)
+          }}
         />
-        {errors.chooseTypeOfPhotography && <p>{t.errorRequiredText}</p>}
 
         {isNude && (
           <label>
