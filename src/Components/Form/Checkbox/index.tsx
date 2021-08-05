@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import './styles.scss'
+import { ErrorMessage } from '../../Common/ErrorMessage'
 
 export const CheckBoxField = ({ label, name, register, error, type }) => {
   const formInputClassName = classnames('form-checkobox__input', {
@@ -13,6 +13,8 @@ export const CheckBoxField = ({ label, name, register, error, type }) => {
         <input id={name} name={name} type={type} ref={register} />
         <span className="checkmark" />
       </label>
+
+      {error && <ErrorMessage message={error.message} />}
     </div>
   )
 }

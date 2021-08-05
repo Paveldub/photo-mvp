@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask'
 import { PREFIX_PHONE_CODE } from '../../../Constants/phoneNumbers'
 import { ErrorMessage } from '../../Common/ErrorMessage'
 
-const MAX_LENGTH = 17
+const MAX_LENGTH = 12
 
 export const PhoneField = (props) => {
   const { label, name, register, error, control, onChange, autoComplete } =

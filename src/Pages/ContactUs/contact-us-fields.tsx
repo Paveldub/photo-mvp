@@ -1,5 +1,8 @@
-import { required, requiredSelect } from '../../services/validators/index'
-import { phoneValidate } from '../../services/validators/phoneValidator'
+import {
+  email,
+  required,
+  requiredSelect,
+} from '../../services/validators/index'
 
 export const TYPE_OF_PHOTOGRAPHY = [
   {
@@ -23,6 +26,7 @@ export const FIELDS = {
     register: {
       validate: {
         required,
+        email,
       },
     },
   },
@@ -30,7 +34,7 @@ export const FIELDS = {
     name: 'phone_number',
     type: 'text',
     register: {
-      validate: { required, phoneValidate },
+      validate: { required },
     },
   },
   type_of_photography: {
