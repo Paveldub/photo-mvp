@@ -26,3 +26,6 @@ export const email = (value) => {
     return undefined
   }
 }
+
+export const checkbox = (value) =>
+  value || value?.checked ? undefined : 'errorRequiredText'

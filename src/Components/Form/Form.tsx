@@ -1,8 +1,10 @@
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslate } from '../../Hooks/useTranslate'
 import { FIELDS } from '../../Pages/ContactUs/contact-us-fields'
 import { formatPhoneNumber } from '../../services/parcers'
 import { createTriggerValidationFunction } from '../../utils'
+import { CheckBoxField } from './Checkbox'
 import { FormWrap } from './Form.styles'
 import { FormField } from './FormField'
 import { PhoneField } from './PhoneFiled'
@@ -25,22 +27,36 @@ const NUDE = 'nude'
 export const Form = () => {
   const t = useTranslate(WORDS)
 
-  const { register, handleSubmit, errors, control, trigger, setValue, watch } =
-    useForm({
-      mode: 'onBlur',
-      reValidateMode: 'onBlur',
-      shouldFocusError: true,
-      shouldUnregister: false,
-    })
+  const {
+    register,
+    handleSubmit,
+    errors,
+    control,
+    trigger,
+    setValue,
+    watch,
+    reset,
+  } = useForm({
+    mode: 'onBlur',
+    reValidateMode: 'onBlur',
+    shouldFocusError: true,
+    shouldUnregister: true,
+  })
 
   const triggerValidation = createTriggerValidationFunction(errors, trigger)
   const chooseType = watch('type_of_photography')
   const isNude = chooseType === NUDE
 
   const onSubmit = (data) => {
-    const { first_name, email, type_of_photography, phone_number } = data
+    const {
+      first_name,
+      email,
+      type_of_photography,
+      phone_number,
+      type_of_photo,
+    } = data
 
-    const ORDER = `Клиент: %0A - Имя: ${first_name} %0A - почта: ${email} %0A - телефон: ${phone_number} %0A - тип-фотографии: ${type_of_photography}`
+    const ORDER = `Клиент: %0A - Имя: ${first_name} %0A - почта: ${email} %0A - телефон: ${phone_number} %0A - тип-фотографии: ${type_of_photography} %0A - возраст: ${type_of_photo}`
 
     const TOKEN = '1731900925:AAGgI0NnWuQnHUvdLTA2jR5kPgZqfKcpgS8'
     const CHAT_ID = -545538000
@@ -49,7 +65,12 @@ export const Form = () => {
     const api = new XMLHttpRequest()
     api.open('GET', URL, true)
     api.send()
+    reset()
   }
+
+  useEffect(() => {
+    onSubmit
+  })
 
   return (
     <>
@@ -98,17 +119,13 @@ export const Form = () => {
         />
 
         {isNude && (
-          <label>
-            <input
-              type="checkbox"
-              id="checkbox"
-              {...register('age', { required: true })}
-            />
-            {t.checkboxAgeText}
-          </label>
+          <CheckBoxField
+            {...FIELDS.type_of_photo}
+            error={errors.type_of_photo}
+            register={register(FIELDS.type_of_photo.register)}
+            label={t.checkboxAgeText}
+          />
         )}
-
-        {errors.age && <p>{t.ageCheckboxConfirmation}</p>}
 
         <SubmitButton label={t.sendMessageText} />
       </FormWrap>

@@ -1,4 +1,5 @@
 import {
+  checkbox,
   email,
   required,
   requiredSelect,
@@ -44,5 +45,12 @@ export const FIELDS = {
       validate: { requiredSelect },
     },
     options: TYPE_OF_PHOTOGRAPHY,
+  },
+  type_of_photo: {
+    name: 'type_of_photo',
+    type: 'checkbox',
+    register: {
+      validate: { checkbox },
+    },
   },
 }

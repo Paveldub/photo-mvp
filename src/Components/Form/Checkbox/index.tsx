@@ -1,5 +1,6 @@
 import classnames from 'classnames'
 import { ErrorMessage } from '../../Common/ErrorMessage'
+import './styles.scss'
 
 export const CheckBoxField = ({ label, name, register, error, type }) => {
   const formInputClassName = classnames('form-checkobox__input', {
