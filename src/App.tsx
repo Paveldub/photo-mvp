@@ -52,9 +52,7 @@ export const App = () => {
       <GlobalStyles />
 
       <Helmet>
-        <Helmet>
-          <title>{t[titles[step]]}</title>
-        </Helmet>
+        <title>{t[titles[step]]}</title>
       </Helmet>
 
       {isAgeConfirmation && isLocalStorage ? (
