@@ -38,6 +38,13 @@ export const FIELDS = {
       validate: { required },
     },
   },
+  telegram_account: {
+    name: 'telegram_account',
+    type: 'text',
+    register: {
+      validate: { required },
+    },
+  },
   type_of_photography: {
     name: 'type_of_photography',
     type: 'text',

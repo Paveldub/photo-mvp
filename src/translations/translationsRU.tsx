@@ -29,6 +29,7 @@ const translationsRU = {
   errorIncorrectPhoneNumberText: 'Проверьте правильность номера телефона',
   errorRequiredSelectText: 'Пожалуйста, выберите вариант из списка',
   errorCorrectValueText: 'Проверьте правильность данных',
+  telegramAccountText: 'Телеграм',
 }
 
 export default translationsRU

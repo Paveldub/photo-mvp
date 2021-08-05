@@ -1,0 +1,52 @@
+.form__button {
+  margin-top: 29px;
+  position: relative;
+
+  button {
+    width: 100%;
+    background: orange;
+    border-radius: 4px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  &_link {
+    margin-top: 20px;
+
+    button {
+      height: auto;
+      font-size: 14px;
+      line-height: 17px;
+      background: none;
+      text-decoration: underline;
+      color: blue;
+    }
+  }
+
+  &--margin-top {
+    margin-top: 10px;
+
+    button {
+      text-transform: none;
+    }
+  }
+
+  &-wrapper {
+    width: 280px;
+
+    &-position {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+
+

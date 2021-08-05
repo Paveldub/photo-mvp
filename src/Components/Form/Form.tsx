@@ -10,6 +10,7 @@ import { FormField } from './FormField'
 import { PhoneField } from './PhoneFiled'
 import { SelectField } from './SelectField'
 import { SubmitButton } from './SubmitButton'
+import { TelegramField } from './TelegramField'
 
 const WORDS = [
   'formFirstNameText',
@@ -21,6 +22,7 @@ const WORDS = [
   'checkboxAgeText',
   'ageCheckboxConfirmation',
   'typeOfPhotographyText',
+  'telegramAccountText',
 ]
 const NUDE = 'nude'
 
@@ -54,9 +56,18 @@ export const Form = () => {
       type_of_photography,
       phone_number,
       type_of_photo,
+      telegram_account,
     } = data
 
-    const ORDER = `Клиент: %0A - Имя: ${first_name} %0A - почта: ${email} %0A - телефон: ${phone_number} %0A - тип-фотографии: ${type_of_photography} %0A - возраст: ${type_of_photo}`
+    const ORDER = `
+      Клиент:
+      %0A - Имя: ${first_name}
+      %0A - почта: ${email}
+      %0A - телефон: ${phone_number}
+      %0A - телеграм: @${telegram_account}
+      %0A - тип-фотографии: ${type_of_photography}
+      %0A - возраст: ${type_of_photo}
+    `
 
     const TOKEN = '1731900925:AAGgI0NnWuQnHUvdLTA2jR5kPgZqfKcpgS8'
     const CHAT_ID = -545538000
@@ -94,7 +105,16 @@ export const Form = () => {
           onChange={(e) => {
             setValue('phone_number', formatPhoneNumber(e.target.value))
             triggerValidation(FIELDS.phone_number.name)
-            console.log(e.target.value)
+          }}
+        />
+
+        <TelegramField
+          {...FIELDS.telegram_account}
+          label={t.telegramAccountText}
+          error={errors.telegram_account}
+          register={register(FIELDS.telegram_account.register)}
+          onChange={() => {
+            triggerValidation(FIELDS.telegram_account.name)
           }}
         />
 

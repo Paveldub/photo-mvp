@@ -1,9 +1,9 @@
-export const SubmitButton = ({ label, submitting, disabled }) => {
+import './styles.scss'
+
+export const SubmitButton = ({ label }) => {
   return (
-    <div>
-      <button type="submit" disabled={submitting || disabled}>
-        {label}
-      </button>
+    <div className="form__button">
+      <button type="submit">{label}</button>
     </div>
   )
 }

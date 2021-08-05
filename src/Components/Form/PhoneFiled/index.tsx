@@ -40,7 +40,7 @@ export const PhoneField = (props) => {
             )}
             defaultValue=""
           />
-          <span className="phone-num">+{PREFIX_PHONE_CODE}</span>
+          <span className="prefix">+{PREFIX_PHONE_CODE}</span>
         </div>
       </label>
 
