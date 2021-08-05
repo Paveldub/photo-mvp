@@ -1,7 +1,7 @@
 import React from 'react'
 import { useGoogleMaps } from 'react-hook-google-maps'
 
-const uluru = { lat: 50.450001, lng: 30.523333 }
+const uluru = { lat: 53.9045398, lng: 27.5615244 }
 
 export const GoogleMap = React.memo(function Map() {
   const { ref, map, google } = useGoogleMaps(
