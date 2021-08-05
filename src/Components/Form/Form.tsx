@@ -35,7 +35,20 @@ export const Form = () => {
 
   const triggerValidation = createTriggerValidationFunction(errors, trigger)
 
-  const onSubmit = (data) => console.log(JSON.stringify(data))
+  const onSubmit = (data) => {
+    const { first_name, email, type_of_photography } = data
+
+    const ORDER = `Клиент: %0A - Имя: ${first_name} %0A - почта: ${email} %0A - тип-фотографии: ${type_of_photography}`
+
+    const TOKEN = '1731900925:AAGgI0NnWuQnHUvdLTA2jR5kPgZqfKcpgS8'
+    const CHAT_ID = -545538000
+    const URL = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${ORDER}`
+
+    const api = new XMLHttpRequest()
+    api.open('GET', URL, true)
+    api.send()
+  }
+
   const chooseType = watch('type_of_photography')
   const isNude = chooseType === NUDE
 
