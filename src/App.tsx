@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Helmet } from 'react-helmet'
+import { useTranslation } from 'react-i18next'
 import { Route } from 'react-router-dom'
 import { Footer, Header } from './Components'
 import { AgeConfirmationPopup } from './Components/Layout/AgeConfirmationPopup/index'
@@ -8,16 +10,13 @@ import {
   GALLERY_PATH,
   HOME_PATH,
 } from './Constants/paths'
-import firebase from './firebase'
+import { STEPS } from './Constants/steps'
 import {
   ContentWrapper,
   GlobalStyles,
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 import { About, ContactUs, Gallery, Home } from './Pages'
-import { Helmet } from 'react-helmet'
-import { useTranslation } from 'react-i18next'
-import { STEPS } from './Constants/steps'
 import { getPathname } from './utils/getPathName'
 
 export {
@@ -38,8 +37,6 @@ export const App = () => {
   const { t } = useTranslation()
   const pageStep = getPathname(location)
 
-  console.log(location)
-
   const step = STEPS[pageStep]
 
   const [isAgeConfirmation, setIsAgeConfirmation] = useState(true)
@@ -49,15 +46,6 @@ export const App = () => {
     setIsAgeConfirmation(!isAgeConfirmation)
     localStorage.setItem('ageConfirmation', 'CONFIRMED')
   }
-
-  useEffect(() => {
-    const msg = firebase.messaging()
-
-    msg.requestPermission().then(() => {
-      return msg.getToken()
-    })
-    // .then((data) => console.log('token', data))
-  })
 
   return (
     <>

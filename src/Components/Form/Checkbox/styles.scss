@@ -62,20 +62,5 @@
   }
 }
 
-.error {
-  display: none;
-  color: red;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
 
-  p {
-    color: red;
-  }
-
-  &--active {
-    display: block;
-  }
-}
 
