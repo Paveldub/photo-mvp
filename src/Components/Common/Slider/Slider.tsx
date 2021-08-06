@@ -4,23 +4,16 @@ import './Slider.styles.scss'
 
 SwiperCore.use([Autoplay, Navigation])
 
-const pics = [
-  'https://i.ibb.co/JCPpVCF/119950000004.jpg',
-  'https://i.ibb.co/TqZLRLf/119950000027.jpg',
-  'https://i.ibb.co/WnpGr1N/119566000035.jpg',
-  'https://i.ibb.co/hR19D0K/112841040037.jpg',
-  'https://i.ibb.co/GMsGvzc/119950000015.jpg',
-  'https://i.ibb.co/YfcDksB/112841040028.jpg',
-]
+export const Slider = (props) => {
+  const { photo } = props
 
-export const Slider = () => {
   return (
     <Swiper
       slidesPerView={4}
       spaceBetween={0}
       navigation
       loop={true}
-      centeredSlides={true}
+      centeredSlides={false}
       grabCursor={true}
       autoplay={{
         delay: 3000,
@@ -45,15 +38,11 @@ export const Slider = () => {
         },
       }}
     >
-      {pics &&
-        pics.map((pic, index) => {
+      {photo &&
+        photo.map((item) => {
           return (
-            <SwiperSlide
-              key={`${pic}_${index}`}
-              onClick={() => alert(index)}
-              className="swiper-slide-blur"
-            >
-              <img src={pic} alt="text" />
+            <SwiperSlide key={`${item.data.id}`} className="swiper-slide-blur">
+              <img src={item.data.photo_url} alt="text" />
             </SwiperSlide>
           )
         })}

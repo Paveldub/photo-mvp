@@ -63,7 +63,7 @@ export const Form = () => {
       Клиент:
       %0A - Имя: ${first_name}
       %0A - почта: ${email}
-      %0A - телефон: ${phone_number}
+      %0A - телефон: 375${phone_number}
       %0A - телеграм: @${telegram_account}
       %0A - тип-фотографии: ${type_of_photography}
       %0A - возраст: ${type_of_photo}
