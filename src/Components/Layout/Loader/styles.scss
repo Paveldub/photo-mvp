@@ -1,0 +1,17 @@
+.loading {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  min-height: 300px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
