@@ -38,14 +38,13 @@ export const Slider = (props) => {
         },
       }}
     >
-      {photo &&
-        photo.map((item) => {
-          return (
-            <SwiperSlide key={`${item.data.id}`} className="swiper-slide-blur">
-              <img src={item.data.photo_url} alt="text" />
-            </SwiperSlide>
-          )
-        })}
+      {photo?.map((item) => {
+        return (
+          <SwiperSlide key={`${item?.data.id}`} className="swiper-slide-blur">
+            <img src={item?.data.photo_url} alt="text" />
+          </SwiperSlide>
+        )
+      })}
     </Swiper>
   )
 }
