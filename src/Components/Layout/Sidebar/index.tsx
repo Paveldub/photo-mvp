@@ -1,10 +1,12 @@
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
 import { LANGUAGES } from '../../../Constants/languages'
+import { SOCIAL_NETWORK_LINKS } from '../../../Constants/socials'
 import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import { usePreventScroll } from '../../../Hooks/usePreventScroll'
 import { useTranslate } from '../../../Hooks/useTranslate'
 import { Icon } from '../../Common/Icon/index'
+import { SocialIconLink } from '../Footer/Footer.styles'
 import './styles.scss'
 
 const WORDS = [
@@ -12,6 +14,7 @@ const WORDS = [
   'galleryPageText',
   'aboutPageText',
   'contactPageText',
+  'socialsText',
 ]
 
 function SideBarBackDrop({ onClose }) {
@@ -81,6 +84,16 @@ export const Sidebar = ({ isOpen, onClose }) => {
             </Link>
           </li>
         </ul>
+        <div className="sidebar__socials">
+          <div>{t.socialsText}</div>
+          <div className="sidebar__socials-direction">
+            {SOCIAL_NETWORK_LINKS.map((item) => (
+              <SocialIconLink key={item.icon} href={item.href} target="_blank">
+                <Icon icon={item.icon} size="25px" />
+              </SocialIconLink>
+            ))}
+          </div>
+        </div>
         <div className="sidebar__lang">
           {LANGUAGES.map((item) => (
             <span

@@ -1,3 +1,4 @@
+import { SOCIAL_NETWORK_LINKS } from '../../../Constants/socials'
 import { useTranslate } from '../../../Hooks/useTranslate'
 import { Icon } from '../../Common/Icon/index'
 import {
@@ -13,11 +14,6 @@ const WORDS = ['allRightReserverText', 'socialsText']
 
 export const Footer = () => {
   const t = useTranslate(WORDS)
-
-  const SOCIAL_NETWORK_LINKS = [
-    { icon: 'instagram', href: '//www.instagram.com/demidovich.fiml/' },
-    { icon: 'telegram', href: '//t.me/paveldubs' },
-  ]
 
   return (
     <>
