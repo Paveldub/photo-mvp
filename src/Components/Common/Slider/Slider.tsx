@@ -9,7 +9,7 @@ export const Slider = (props) => {
 
   return (
     <Swiper
-      slidesPerView={4}
+      slidesPerView={8}
       spaceBetween={0}
       navigation
       loop={true}
@@ -40,7 +40,7 @@ export const Slider = (props) => {
     >
       {photo?.map((item) => {
         return (
-          <SwiperSlide key={`${item?.data.id}`} className="swiper-slide-blur">
+          <SwiperSlide key={`${item?.data.id}`}>
             <img src={item?.data.photo_url} alt="text" />
           </SwiperSlide>
         )
