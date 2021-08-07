@@ -17,7 +17,7 @@ import {
   HeaderNav,
 } from './Header.styles'
 import './styles.scss'
-const WORDS = ['galleryText', 'aboutText', 'contactUsText']
+const WORDS = ['galleryText', 'aboutText', 'contactUsText', 'homePageText']
 
 export const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
@@ -40,6 +40,7 @@ export const Header = () => {
           </HeaderHalf>
           <HeaderHalf>
             <HeaderNav>
+              <HeaderLink to="/">{t.homePageText}</HeaderLink>
               <HeaderLink to="/gallery">{t.galleryText}</HeaderLink>
               <HeaderLink to="/about">{t.aboutText}</HeaderLink>
               <HeaderLink to="/contact">{t.contactUsText}</HeaderLink>

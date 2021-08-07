@@ -30,6 +30,7 @@ const translationsENG = {
   errorRequiredSelectText: 'Choose from the list',
   errorCorrectValueText: 'Check the correct data',
   telegramAccountText: 'Telegram',
+  homePageText: 'Home page',
 }
 
 export default translationsENG

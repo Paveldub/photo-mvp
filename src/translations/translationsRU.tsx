@@ -30,6 +30,7 @@ const translationsRU = {
   errorRequiredSelectText: 'Пожалуйста, выберите вариант из списка',
   errorCorrectValueText: 'Проверьте правильность данных',
   telegramAccountText: 'Телеграм',
+  homePageText: 'Главная',
 }
 
 export default translationsRU
