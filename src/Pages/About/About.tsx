@@ -30,6 +30,8 @@ export const About = () => {
       <a href="https://lovemercymag.com/home/2021/6/27/belarusian-mermaids-by-pavel-demidovich">
         Mermaids
       </a>
+      <h1>Vogue</h1>
+      <span>find the link</span>
     </Container>
   )
 }
