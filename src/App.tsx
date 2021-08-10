@@ -82,7 +82,7 @@ export const App = () => {
                 <Route path={CONTACTS_PATH} component={ContactUs} exact />
               </PagesWrapper>
             </ContentWrapper>
-            <Footer />
+
             {!loading && (
               <div className="transition-image final">
                 <motion.img
@@ -92,6 +92,8 @@ export const App = () => {
                 />
               </div>
             )}
+
+            <Footer />
           </ContentWrapper>
         )}
       </AnimatePresence>
