@@ -1,4 +1,10 @@
+import { useTranslate } from '../../Hooks/useTranslate'
+
+const WORDS = ['mainTitleText']
+
 export const Home = () => {
+  const t = useTranslate(WORDS)
+
   // const [photos, setPhotos] = useState([])
   // const [loading, setLoading] = useState(true)
 
@@ -17,5 +23,10 @@ export const Home = () => {
   //   return <Loader setLoading={setLoading} />
   // }
 
-  return <>{/* <Slider photo={photos} /> */}</>
+  return (
+    <>
+      {/* <Slider photo={photos} /> */}
+      <h1>{t.mainTitleText}</h1>
+    </>
+  )
 }
