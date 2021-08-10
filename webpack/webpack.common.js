@@ -2,12 +2,16 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const portFinderSync = require('portfinder-sync')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+    }),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ],
   entry: {

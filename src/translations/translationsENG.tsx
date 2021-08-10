@@ -3,11 +3,11 @@ const translationsENG = {
   aboutText: 'About',
   contactUsText: 'Contact',
   allRightReserverText: 'All rights reserved',
-  socialsText: 'Follow my socials:',
+  socialsText: 'Follow me:',
   areYouEighteenText: 'You must be 18 to use this website',
   confirmedText: 'I am over 18',
   unconfirmedText: 'Exit',
-  mainPageText: 'Home page',
+  mainPageText: 'Home',
   galleryPageText: 'Gallery',
   aboutPageText: 'About',
   contactPageText: 'Contacts',
@@ -22,7 +22,7 @@ const translationsENG = {
   checkboxAgeText: 'I am 18',
   ageCheckboxConfirmation: 'Сonfirm your age',
   typeOfPhotographyText: 'Type of photography',
-  homePageTitle: 'Home page',
+  homePageTitle: 'Home',
   galleryPageTitle: 'Gallery page',
   aboutPageTitle: 'About page',
   contactPageTitle: 'Contact page',
@@ -30,7 +30,7 @@ const translationsENG = {
   errorRequiredSelectText: 'Choose from the list',
   errorCorrectValueText: 'Check the correct data',
   telegramAccountText: 'Telegram',
-  homePageText: 'Home page',
+  homePageText: 'Home',
 }
 
 export default translationsENG

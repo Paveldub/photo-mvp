@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Slider } from '../../Components'
-import { Loading } from '../../Components/Layout/Loader'
+import { Loader } from '../../Components/Layout/Loader'
 import db from '../../firebase'
 
 export const Home = () => {
@@ -19,7 +19,7 @@ export const Home = () => {
   }, [loading])
 
   if (loading) {
-    return <Loading />
+    return <Loader setLoading={setLoading} />
   }
 
   return (
