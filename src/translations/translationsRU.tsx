@@ -31,7 +31,6 @@ const translationsRU = {
   errorCorrectValueText: 'Проверьте правильность данных',
   telegramAccountText: 'Телеграм',
   homePageText: 'Главная',
-  mainTitleText: 'Красота и эстетика женского тела',
 }
 
 export default translationsRU

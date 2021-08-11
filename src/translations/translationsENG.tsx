@@ -31,7 +31,6 @@ const translationsENG = {
   errorCorrectValueText: 'Check the correct data',
   telegramAccountText: 'Telegram',
   homePageText: 'Home',
-  mainTitleText: 'Nude and erotic art photography',
 }
 
 export default translationsENG

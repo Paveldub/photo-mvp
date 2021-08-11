@@ -1,32 +1,30 @@
-import { useTranslate } from '../../Hooks/useTranslate'
-
-const WORDS = ['mainTitleText']
+import { useEffect, useState } from 'react'
+import { Slider } from '../../Components'
+import { Loading } from '../../Components/Layout/Loader'
+import db from '../../firebase'
 
 export const Home = () => {
-  const t = useTranslate(WORDS)
+  const [photos, setPhotos] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  // const [photos, setPhotos] = useState([])
-  // const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    db.collection('photos').onSnapshot((snapshot) => {
+      setPhotos(
+        snapshot.docs.map((doc) => ({
+          data: doc.data(),
+        }))
+      )
+      setLoading(false)
+    })
+  }, [loading])
 
-  // useEffect(() => {
-  //   db.collection('photos').onSnapshot((snapshot) => {
-  //     setPhotos(
-  //       snapshot.docs.map((doc) => ({
-  //         data: doc.data(),
-  //       }))
-  //     )
-  //     setLoading(false)
-  //   })
-  // }, [loading])
-
-  // if (loading) {
-  //   return <Loader setLoading={setLoading} />
-  // }
+  if (loading) {
+    return <Loading setLoading={setLoading} />
+  }
 
   return (
     <>
-      {/* <Slider photo={photos} /> */}
-      <h1>{t.mainTitleText}</h1>
+      <Slider photo={photos} />
     </>
   )
 }
