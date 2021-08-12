@@ -8,12 +8,12 @@ import { About, ContactUs, Gallery, Home } from '../Pages'
 
 const galleryRoute = {
   path: GALLERY_PATH,
-  component: About,
+  component: Gallery,
 }
 
 const aboutRoute = {
   path: ABOUT_PATH,
-  component: Gallery,
+  component: About,
 }
 
 const contactRoute = {

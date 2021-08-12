@@ -31,6 +31,7 @@ const translationsRU = {
   errorCorrectValueText: 'Проверьте правильность данных',
   telegramAccountText: 'Телеграм',
   homePageText: 'Главная',
+  pageNotFoundText: 'Страница не найдена',
 }
 
 export default translationsRU

@@ -31,6 +31,7 @@ const translationsENG = {
   errorCorrectValueText: 'Check the correct data',
   telegramAccountText: 'Telegram',
   homePageText: 'Home',
+  pageNotFoundText: 'Page not found',
 }
 
 export default translationsENG

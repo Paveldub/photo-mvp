@@ -1,0 +1,43 @@
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+
+  &__heading {
+    padding: 40px;
+    text-align: center;
+
+    h1 {
+      font-size: 32px;
+      font-style: normal;
+      line-height: 45px;
+      color: blue;
+    }
+  }
+
+  &__image {
+
+  }
+
+  &__button {
+    display: flex;
+    margin-top: 40px;
+
+    a {
+      text-decoration: none;
+      background: orange;
+      border-radius: 4px;
+      padding: 14px 50px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
