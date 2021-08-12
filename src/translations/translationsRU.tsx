@@ -32,6 +32,7 @@ const translationsRU = {
   telegramAccountText: 'Телеграм',
   homePageText: 'Главная',
   pageNotFoundText: 'Страница не найдена',
+  pageNotFoundButtonText: 'На главную',
 }
 
 export default translationsRU

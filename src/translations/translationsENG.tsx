@@ -32,6 +32,7 @@ const translationsENG = {
   telegramAccountText: 'Telegram',
   homePageText: 'Home',
   pageNotFoundText: 'Page not found',
+  pageNotFoundButtonText: 'Home page',
 }
 
 export default translationsENG
