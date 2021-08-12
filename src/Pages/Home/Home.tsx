@@ -19,7 +19,7 @@ export const Home = () => {
   }, [loading])
 
   if (loading) {
-    return <Loading setLoading={setLoading} />
+    return <Loading />
   }
 
   return (
