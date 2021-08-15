@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Slider } from '../../Components'
 import { Loading } from '../../Components/Layout/Loader'
 import db from '../../firebase'
+import './styles.scss'
 
 export const Home = () => {
   const [photos, setPhotos] = useState([])
@@ -24,7 +25,9 @@ export const Home = () => {
 
   return (
     <>
-      <Slider photo={photos} />
+      <div className="slider-wrapper">
+        <Slider photo={photos} />
+      </div>
     </>
   )
 }

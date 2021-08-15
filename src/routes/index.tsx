@@ -1,3 +1,4 @@
+import { PageNotFound } from '../Components/Common/PageNotFound'
 import {
   ABOUT_PATH,
   CONTACTS_PATH,
@@ -26,4 +27,14 @@ const homeRoute = {
   component: Home,
 }
 
-export const routes = [galleryRoute, aboutRoute, contactRoute, homeRoute]
+const pageNotFound = {
+  component: PageNotFound,
+}
+
+export const routes = [
+  galleryRoute,
+  aboutRoute,
+  contactRoute,
+  homeRoute,
+  pageNotFound,
+]

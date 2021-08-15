@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Footer, Header } from './Components'
-import { PageNotFound } from './Components/Common/PageNotFound'
 import { AgeConfirmationPopup } from './Components/Layout/AgeConfirmationPopup'
 import { STEPS } from './Constants/steps'
 import {
@@ -60,19 +59,14 @@ export const App = () => {
         <Header />
         <ContentWrapper>
           <PagesWrapper>
-            <Router>
-              <Switch>
-                {routes.map((item) => (
-                  <Route
-                    key={item.path}
-                    path={item.path}
-                    component={item.component}
-                    exact
-                  />
-                ))}
-                <Route path="/*" component={PageNotFound} />
-              </Switch>
-            </Router>
+            {routes.map((item) => (
+              <Route
+                key={item.path}
+                path={item.path}
+                component={item.component}
+                exact
+              />
+            ))}
           </PagesWrapper>
         </ContentWrapper>
 

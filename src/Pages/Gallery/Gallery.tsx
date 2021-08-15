@@ -3,6 +3,7 @@ import { Slider } from '../../Components'
 import { Loading } from '../../Components/Layout/Loader'
 import db from '../../firebase'
 import { useTranslate } from '../../Hooks/useTranslate'
+import './styles.scss'
 
 const WORDS = ['galleryText']
 
@@ -30,8 +31,9 @@ export const Gallery = () => {
   return (
     <>
       <h1>{t.galleryText}</h1>
-
-      <Slider photo={photos} />
+      <div className="slider-wrapper">
+        <Slider photo={photos} />
+      </div>
     </>
   )
 }
