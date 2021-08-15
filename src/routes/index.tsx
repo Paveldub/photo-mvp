@@ -29,6 +29,7 @@ const homeRoute = {
 
 const pageNotFound = {
   component: PageNotFound,
+  path: '/*',
 }
 
 export const routes = [
