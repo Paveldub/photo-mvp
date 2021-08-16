@@ -1,3 +1,27 @@
 .slider-wrapper {
   overflow: hidden;
 }
+
+.main-image-wrap {
+  background: url('../../assets/images/main-image.jpg');
+  background-position: 100% 20%;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.31);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+  min-height: 90vh;
+  max-height: 90vh;
+  flex-direction: column;
+  background-repeat: no-repeat;
+
+  &__title {
+    padding-top: 50%;
+    margin: 0 auto;
+
+    h1 {
+      color: #fff;
+    }
+  }
+}

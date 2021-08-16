@@ -24,7 +24,7 @@ const translationsRU = {
   typeOfPhotographyText: 'Выберете тип съмки',
   homePageTitle: 'Главная страница',
   galleryPageTitle: 'Галлерея',
-  aboutPageTitle: 'Обо мне',
+  aboutPageTitle: 'Публикации',
   contactPageTitle: 'Контакты',
   errorIncorrectPhoneNumberText: 'Проверьте правильность номера телефона',
   errorRequiredSelectText: 'Пожалуйста, выберите вариант из списка',

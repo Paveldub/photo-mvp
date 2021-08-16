@@ -25,6 +25,11 @@ export const Home = () => {
 
   return (
     <>
+      <div className="main-image-wrap">
+        <div className="main-image-wrap__title">
+          <h1>By Pavel Demidovich</h1>
+        </div>
+      </div>
       <div className="slider-wrapper">
         <Slider photo={photos} />
       </div>

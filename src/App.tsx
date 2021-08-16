@@ -55,25 +55,23 @@ export const App = () => {
       </Helmet>
       <GlobalStyles />
 
+      <Header />
       <ContentWrapper>
-        <Header />
-        <ContentWrapper>
-          <PagesWrapper>
-            <Switch>
-              {routes.map((item) => (
-                <Route
-                  key={item.path}
-                  path={item.path}
-                  component={item.component}
-                  exact
-                />
-              ))}
-            </Switch>
-          </PagesWrapper>
-        </ContentWrapper>
-
-        <Footer />
+        <PagesWrapper>
+          <Switch>
+            {routes.map((item) => (
+              <Route
+                key={item.path}
+                path={item.path}
+                component={item.component}
+                exact
+              />
+            ))}
+          </Switch>
+        </PagesWrapper>
       </ContentWrapper>
+
+      <Footer />
     </>
   )
 }

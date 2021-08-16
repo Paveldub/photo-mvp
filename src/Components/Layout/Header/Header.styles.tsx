@@ -3,10 +3,12 @@ import styled from 'styled-components'
 
 export const ContainerWrapper = styled('header')`
   display: flex;
-  box-shadow: 0 2px 15px rgba(0, 44, 84, 0.25);
   width: 100%;
-  background-color: #ccc;
   z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `
 
 export const HeaderContainer = styled('div')`
@@ -16,21 +18,25 @@ export const HeaderContainer = styled('div')`
   display: flex;
   padding: 0 15px;
   align-items: center;
+  padding: 15px 15px;
+
+  @media screen and (max-width: 480px) {
+    background: #fff;
+  }
 `
 
-export const HeaderHalf = styled('div')`
+export const HeaderHalfLeft = styled('div')`
   width: 50%;
-`
-
-export const HeaderLogoWrapper = styled('div')`
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: flex-start;
 `
 
-export const HeaderLogo = styled('img')`
-  src: url(${(props) => props.src});
-  cursor: pointer;
+export const HeaderHalfRight = styled('div')`
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 `
 
 export const HeaderLogoText = styled('span')`
@@ -43,6 +49,7 @@ export const HeaderNav = styled('nav')`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-right: 0 auto;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -78,10 +85,6 @@ export const Sidebar = styled('div')``
 export const HeaderLanguageSpan = styled('span')`
   color: #fff;
   outline: navajowhite;
-  margin-right: 5px;
   text-transform: uppercase;
-
-  &::last-child {
-    margin-right: 0;
-  }
+  cursor: pointer;
 `

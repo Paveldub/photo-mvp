@@ -24,7 +24,7 @@ const translationsENG = {
   typeOfPhotographyText: 'Type of photography',
   homePageTitle: 'Home',
   galleryPageTitle: 'Gallery page',
-  aboutPageTitle: 'About page',
+  aboutPageTitle: 'Editorials',
   contactPageTitle: 'Contact page',
   errorIncorrectPhoneNumberText: 'Is your phone number is correct?!',
   errorRequiredSelectText: 'Choose from the list',
