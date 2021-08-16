@@ -30,6 +30,7 @@ export const Home = () => {
           <h1>By Pavel Demidovich</h1>
         </div>
       </div>
+      <h1>new featured projects</h1>
       <div className="slider-wrapper">
         <Slider photo={photos} />
       </div>

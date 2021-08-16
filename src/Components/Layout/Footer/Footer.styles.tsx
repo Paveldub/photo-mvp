@@ -9,7 +9,7 @@ export const ContainerWrapper = styled('footer')`
 `
 
 export const FooterContainer = styled('div')`
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
   display: flex;
