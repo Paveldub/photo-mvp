@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 import { Link } from 'react-router-dom'
-import { NewFeaturedProjects } from '../../Components/Common/NewFeaturedProjects'
+import mainImage from '../../assets/images/main-image.jpg'
+import { HomeGallery } from '../../Components/Common/HomeGallery'
 import { Loading } from '../../Components/Layout/Loader'
 import db from '../../firebase'
 import { useTranslate } from '../../Hooks/useTranslate'
@@ -14,7 +17,7 @@ export const Home = () => {
   const t = useTranslate(WORDS)
 
   useEffect(() => {
-    db.collection('photos').onSnapshot((snapshot) => {
+    db.collection('homePage').onSnapshot((snapshot) => {
       setPhotos(
         snapshot.docs.map((doc) => ({
           data: doc.data(),
@@ -31,7 +34,15 @@ export const Home = () => {
   return (
     <>
       <article>
-        <div className="main-image-wrap" />
+        <div />
+        <LazyLoadImage
+          className="main-image-wrap"
+          src={mainImage}
+          // style={{ backgroundImage: `url(${})` }}
+          effect="blur"
+          height="100%"
+          width="100%"
+        />
       </article>
 
       <article>
@@ -39,7 +50,7 @@ export const Home = () => {
           <div className="new-projects-title">
             <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
           </div>
-          <NewFeaturedProjects photo={photos} />
+          <HomeGallery photo={photos} />
         </div>
       </article>
     </>
