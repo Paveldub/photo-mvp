@@ -1,0 +1,43 @@
+.new-projects {
+
+  &__list {
+    columns: 2;
+
+    li {
+      position: relative;
+      height: 450px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        opacity: .1;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 8px 0;
+        font-family: Arial,Helvetica,sans-serif;
+        font-weight: 700;
+        line-height: 1.2em;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 36px;
+        letter-spacing: 0em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
+  }
+}

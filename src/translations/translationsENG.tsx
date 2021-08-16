@@ -2,7 +2,8 @@ const translationsENG = {
   galleryText: 'Gallery',
   aboutText: 'About',
   contactUsText: 'Contact',
-  allRightReserverText: 'All rights reserved',
+  allRightReserverText:
+    'All Rights Reserved. All models appearing on this website are 18 years or older.',
   socialsText: 'Follow me:',
   areYouEighteenText: 'You must be 18 to use this website',
   confirmedText: 'I am over 18',
@@ -33,6 +34,7 @@ const translationsENG = {
   homePageText: 'Home',
   pageNotFoundText: 'Page not found',
   pageNotFoundButtonText: 'Home page',
+  newFeaturedProjectsText: 'new featured projects',
 }
 
 export default translationsENG

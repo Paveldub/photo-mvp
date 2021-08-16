@@ -2,7 +2,7 @@ const translationsRU = {
   galleryText: 'Галерея',
   aboutText: 'Обо мне',
   contactUsText: 'Контакты',
-  allRightReserverText: 'Все права защищены',
+  allRightReserverText: 'Все права защищены. Всем моделям 18+ лет',
   socialsText: 'Мои соцсети:',
   areYouEighteenText: 'Вам исполнилось 18+ лет?',
   confirmedText: 'Подтверждаю, что мне 18',
@@ -33,6 +33,7 @@ const translationsRU = {
   homePageText: 'Главная',
   pageNotFoundText: 'Страница не найдена',
   pageNotFoundButtonText: 'На главную',
+  newFeaturedProjectsText: 'новые проекты',
 }
 
 export default translationsRU

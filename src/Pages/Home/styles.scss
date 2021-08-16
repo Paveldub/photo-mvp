@@ -1,5 +1,6 @@
-.slider-wrapper {
-  overflow: hidden;
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .main-image-wrap {
@@ -15,12 +16,27 @@
   max-height: 95vh;
   flex-direction: column;
   background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
 
-  &__title {
-    margin: auto;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .1;
+  }
+}
 
-    h1 {
-      color: #fff;
-    }
+.new-projects-title {
+  text-align: center;
+  margin: 25px 0;
+
+  h2 {
+    font-size: 16px;
+    color: #000;
   }
 }

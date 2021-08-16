@@ -16,6 +16,7 @@ export const HeaderContainer = styled('div')`
   margin: 0 auto;
   width: 100%;
   display: flex;
+  flex-direction: column;
   padding: 0 15px;
   align-items: center;
   padding: 15px 15px;
@@ -23,6 +24,27 @@ export const HeaderContainer = styled('div')`
   @media screen and (max-width: 480px) {
     background: #fff;
   }
+`
+
+export const HeaderContainerWrapper = styled('div')`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`
+
+export const HeaderLogo = styled('div')`
+  padding: 30px 0 30px 0;
+
+  img {
+    max-width: 320px;
+  }
+`
+
+export const HeaderSocials = styled('div')`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding-bottom: 20px;
 `
 
 export const HeaderHalfLeft = styled('div')`

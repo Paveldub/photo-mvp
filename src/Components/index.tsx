@@ -1,6 +1,5 @@
 export { Icon } from './Common/Icon/index'
 export { GoogleMap } from './Common/Map/Map'
-export { Slider } from './Common/Slider/Slider'
 export { Form } from './Form/Form'
 export { Footer } from './Layout/Footer/Footer'
 export { Header } from './Layout/Header/Header'
