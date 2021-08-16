@@ -8,6 +8,9 @@ export const Gallery = () => {
 
   return (
     <>
+      <article>
+        <div className="gallery-image-wrap" />
+      </article>
       <h1>{t.galleryText}</h1>
     </>
   )
