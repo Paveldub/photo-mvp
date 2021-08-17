@@ -3,25 +3,26 @@
   &__list {
     columns: 2;
 
+    @media screen and (max-width: 1200px) {
+      columns: 1;
+    }
+
     li {
       position: relative;
-      height: 450px;
+      min-height: 460px;
       margin-bottom: 30px;
 
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #000;
-        opacity: .1;
+      @media screen and (max-width: 1200px) {
+        text-align: center;
       }
 
       img {
         width: 100%;
         height: 100%;
+
+        @media screen and (max-width: 1200px) {
+          width: auto;
+        }
       }
 
       span {
