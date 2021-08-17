@@ -1,4 +1,5 @@
 import { PageNotFound } from '../Components/Common/PageNotFound'
+import { PhotoDetails } from '../Components/Common/Photos'
 import {
   ABOUT_PATH,
   CONTACTS_PATH,
@@ -32,10 +33,16 @@ const pageNotFound = {
   path: '/*',
 }
 
+const photoId = {
+  component: PhotoDetails,
+  path: '/photos/:photosId',
+}
+
 export const routes = [
   galleryRoute,
   aboutRoute,
   contactRoute,
   homeRoute,
   pageNotFound,
+  photoId,
 ]
