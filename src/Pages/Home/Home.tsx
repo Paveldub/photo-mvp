@@ -40,14 +40,15 @@ export const Home = () => {
         />
       </article>
 
+      <div className="new-projects-title">
+        <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
+      </div>
+
       {loading ? (
         <Loading />
       ) : (
         <article>
           <div className="container">
-            <div className="new-projects-title">
-              <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
-            </div>
             <HomeGallery photo={photos} />
           </div>
         </article>
