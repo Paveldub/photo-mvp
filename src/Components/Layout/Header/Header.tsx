@@ -1,7 +1,6 @@
 import classnames from 'classnames'
 import { useState } from 'react'
 import { Icon } from '../..'
-import logo from '../../../assets/images/logo.png'
 import { LANGUAGES } from '../../../Constants/languages'
 import { SOCIAL_NETWORK_LINKS } from '../../../Constants/socials'
 import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
@@ -17,7 +16,6 @@ import {
   HeaderLanguage,
   HeaderLanguageSpan,
   HeaderLink,
-  HeaderLogo,
   HeaderNav,
   HeaderSocials,
 } from './Header.styles'
@@ -35,20 +33,14 @@ export const Header = () => {
     <>
       <ContainerWrapper>
         <HeaderContainer>
-          <HeaderLogo>
-            <img src={logo} alt="logo" />
-            <HeaderSocials>
-              {SOCIAL_NETWORK_LINKS.map((item) => (
-                <SocialIconLink
-                  key={item.icon}
-                  href={item.href}
-                  target="_blank"
-                >
-                  <Icon icon={item.icon} size="25px" />
-                </SocialIconLink>
-              ))}
-            </HeaderSocials>
-          </HeaderLogo>
+          <HeaderSocials>
+            {SOCIAL_NETWORK_LINKS.map((item) => (
+              <SocialIconLink key={item.icon} href={item.href} target="_blank">
+                <Icon icon={item.icon} size="25px" />
+              </SocialIconLink>
+            ))}
+          </HeaderSocials>
+
           <HeaderContainerWrapper>
             <HeaderHalfLeft>
               <HeaderNav>

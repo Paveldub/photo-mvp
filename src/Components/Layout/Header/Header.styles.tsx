@@ -31,15 +31,6 @@ export const HeaderContainerWrapper = styled('div')`
   flex-direction: row;
   width: 100%;
 `
-
-export const HeaderLogo = styled('div')`
-  padding: 30px 0 30px 0;
-
-  img {
-    max-width: 320px;
-  }
-`
-
 export const HeaderSocials = styled('div')`
   display: flex;
   width: 100%;

@@ -5,18 +5,16 @@
 
 .main-image-wrap {
   object-fit: cover;
-  object-position: 100% 40%;
+  background-position: 50% 50%;
   background-color: rgba(0, 0, 0, 0.31);
   position: relative;
   overflow: hidden;
   display: flex;
   height: 100%;
-  min-height: 95vh;
-  max-height: 95vh;
+  min-height: 85vh;
+  max-height: 85vh;
   flex-direction: column;
   background-repeat: no-repeat;
-  position: relative;
-  background-attachment: fixed;
 
   &:before {
     content: '';
