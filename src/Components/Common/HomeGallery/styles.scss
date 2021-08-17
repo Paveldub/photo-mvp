@@ -20,13 +20,37 @@
         margin-bottom: 70px;
       }
 
+      @media screen and (max-width: 600px) {
+        margin-bottom: 15px;
+        min-height: 415px;
+      }
+
       @media screen and (max-width: 540px) {
         min-height: 350px;
+        margin-bottom: 20px
       }
 
       @media screen and (max-width: 480px) {
         min-height: 255px;
-        margin-bottom: 10px;
+        margin-bottom: 80px;
+      }
+
+      @media screen and (max-width: 414px) {
+        margin-bottom: 30px;
+      }
+
+      @media screen and (max-width: 375px) {
+        margin-bottom: 15px;
+      }
+
+      @media screen and (max-width: 360px) {
+        min-height: 200px;
+        margin-bottom: 50px;
+      }
+
+      @media screen and (max-width: 320px) {
+        min-height: 200px;
+        margin-bottom: 25px;
       }
 
       img {
