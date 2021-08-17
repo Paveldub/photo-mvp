@@ -27,10 +27,6 @@ export const Home = () => {
     })
   }, [loading])
 
-  if (loading) {
-    return <Loading />
-  }
-
   return (
     <>
       <article>
@@ -38,21 +34,24 @@ export const Home = () => {
         <LazyLoadImage
           className="main-image-wrap"
           src={mainImage}
-          // style={{ backgroundImage: `url(${})` }}
           effect="blur"
           height="100%"
           width="100%"
         />
       </article>
 
-      <article>
-        <div className="container">
-          <div className="new-projects-title">
-            <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
+      {loading ? (
+        <Loading />
+      ) : (
+        <article>
+          <div className="container">
+            <div className="new-projects-title">
+              <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
+            </div>
+            <HomeGallery photo={photos} />
           </div>
-          <HomeGallery photo={photos} />
-        </div>
-      </article>
+        </article>
+      )}
     </>
   )
 }
