@@ -9,21 +9,24 @@ export const HomeGallery = (props) => {
   return (
     <div className="new-projects">
       <ul className="new-projects__list">
-        {photo?.map((item) => {
-          return (
-            <Link to={`/photos/${item?.data.id}`} key={`${item?.data.id}`}>
-              <li>
-                <LazyLoadImage
-                  src={item?.data.photo_url}
-                  effect="blur"
-                  alt={item?.data.photo_title}
-                  height="450px"
-                />
-                <span>{item?.data.photo_title}</span>
-              </li>
-            </Link>
-          )
-        })}
+        {photo
+          .slice()
+          .sort(() => 0.5 - Math.random())
+          .map((item) => {
+            return (
+              <Link to={`/photos/${item?.data.id}`} key={item?.data.id}>
+                <li>
+                  <LazyLoadImage
+                    src={item?.data.photo_url}
+                    effect="blur"
+                    alt={item?.data.photo_title}
+                    height="450px"
+                  />
+                  <span>{item?.data.photo_title}</span>
+                </li>
+              </Link>
+            )
+          })}
       </ul>
     </div>
   )
