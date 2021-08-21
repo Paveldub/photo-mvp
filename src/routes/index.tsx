@@ -1,4 +1,3 @@
-import { PageNotFound } from '../Components/Common/PageNotFound'
 import { PhotoDetails } from '../Components/Common/Photos'
 import {
   ABOUT_PATH,
@@ -28,10 +27,10 @@ const homeRoute = {
   component: Home,
 }
 
-const pageNotFound = {
-  component: PageNotFound,
-  path: '/*',
-}
+// const pageNotFound = {
+//   component: PageNotFound,
+//   path: '/*',
+// }
 
 const photoId = {
   component: PhotoDetails,
@@ -43,6 +42,6 @@ export const routes = [
   aboutRoute,
   contactRoute,
   homeRoute,
-  pageNotFound,
+  // pageNotFound,
   photoId,
 ]

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
 import { Route, Switch } from 'react-router-dom'
@@ -40,6 +40,10 @@ export const App = () => {
     setIsAgeConfirmation(!isAgeConfirmation)
     localStorage.setItem('ageConfirmation', 'CONFIRMED')
   }
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
     <>
