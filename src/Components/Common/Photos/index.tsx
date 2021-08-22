@@ -13,9 +13,7 @@ export const PhotoDetails = () => {
   console.log(location.pathname)
 
   useEffect(() => {
-    if (location.pathname) {
-      listAll(location.pathname)
-    }
+    listAll('water_lilies')
 
     setLoading(false)
   }, [loading])
