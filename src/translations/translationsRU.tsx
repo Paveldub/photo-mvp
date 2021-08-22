@@ -34,6 +34,7 @@ const translationsRU = {
   pageNotFoundText: 'Страница не найдена',
   pageNotFoundButtonText: 'На главную',
   newFeaturedProjectsText: 'новые проекты',
+  aboutMeText: 'Обо мне',
 }
 
 export default translationsRU
