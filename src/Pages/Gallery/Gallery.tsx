@@ -27,9 +27,7 @@ export const Gallery = () => {
 
   return (
     <>
-      <article>
-        <div className="gallery-image-wrap" />
-      </article>
+      <div className="gallery-image-wrap" />
       <Container>
         <div className="gallery">
           <div className="gallery__title">

@@ -1,7 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/storage'
-import { get } from 'lodash'
 
 const firebaseApp = firebase.initializeApp({
   apiKey: 'AIzaSyD9Pwe9YgJDJMo_0oELNuVMJMWT8N3S5EA',
@@ -13,34 +12,39 @@ const firebaseApp = firebase.initializeApp({
   appId: '1:165238381929:web:717f119dfa031af8e271f8',
 })
 
-export const allData = []
+// export const allData = []
 
-function listAll(folder) {
-  const storageRef = firebase.storage().ref()
+// function listAll(folder) {
+//   const storageRef = firebase.storage().ref()
 
-  const listRef = storageRef.child(folder)
+//   const listRef = storageRef.child(folder)
 
-  listRef
-    .listAll()
-    .then((res) => {
-      res.items.forEach((folderRef) => {
-        folderRef.getDownloadURL().then((url) => {
-          // console.log('getDownloadURL :' + url)
-          allData.push(url)
-        })
-      })
-    })
-    .catch((e) => {
-      const response = get(e, 'response', {})
+//   console.log(listRef)
 
-      if (response.status === 404) {
-        console.warn(e.message)
-      }
-    })
-}
+//   listRef
+//     .listAll()
+//     .then((res) => {
+//       res.items.forEach((folderRef) => {
+//         // console.log(folderRef)
+//         allData.push(folderRef)
+
+//         folderRef.getDownloadURL().then((url) => {
+//           // console.log('getDownloadURL :' + url)
+//           allData.push(url)
+//         })
+//       })
+//     })
+//     .catch((e) => {
+//       const response = get(e, 'response', {})
+
+//       if (response.status === 404) {
+//         console.warn(e.message)
+//       }
+//     })
+// }
 
 const db = firebaseApp.firestore()
 const storage = firebase.storage()
 
-export { storage, listAll, firebase as defaut }
+export { storage, firebase as defaut }
 export default db

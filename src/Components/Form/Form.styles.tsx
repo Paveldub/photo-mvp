@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 export const FormWrap = styled('form')`
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 350px;
 `
 
 export const FormInput = styled('input')`

@@ -1,14 +1,32 @@
 import classnames from 'classnames'
-import { Controller } from 'react-hook-form'
+import { Controller, useController } from 'react-hook-form'
 import InputMask from 'react-input-mask'
 import { PREFIX_PHONE_CODE } from '../../../Constants/phoneNumbers'
 import { ErrorMessage } from '../../Common/ErrorMessage'
 
 const MAX_LENGTH = 12
 
+const getPasteClient = (e) => {
+  if (e.clipboardData && e.clipboardData.getData) {
+    return e.clipboardData.getData('text/plain')
+  } else {
+    if (window.clipboardData && window.clipboardData.getData) {
+      return window.clipboardData.getData('Text')
+    } else {
+      return null
+    }
+  }
+}
+
 export const PhoneField = (props) => {
   const { label, name, register, error, control, onChange, autoComplete } =
     props
+
+  const { field } = useController({
+    name,
+    control,
+    rules: register,
+  })
 
   const phoneInputClassName = classnames('form__input', {
     'form__input--active': error,
@@ -32,6 +50,17 @@ export const PhoneField = (props) => {
                 maskChar=""
                 {...props}
                 onChange={onChange}
+                onPaste={(e) => {
+                  let paste = getPasteClient(e)
+                  paste = paste.replace(/[^0-9]/g, '')
+                  setTimeout(() => {
+                    if (paste.indexOf('375') === 0) {
+                      field.onChange(paste.slice(3))
+                    } else {
+                      field.onChange(paste)
+                    }
+                  }, 25)
+                }}
               >
                 {(inputProps) => (
                   <input {...inputProps} type="tel" maxLength={MAX_LENGTH} />

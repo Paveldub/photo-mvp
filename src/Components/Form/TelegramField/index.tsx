@@ -15,15 +15,17 @@ export const TelegramField = (props) => {
       <label>
         {label}
 
-        <input
-          maxLength={maxLength}
-          name={name}
-          ref={register}
-          type={type}
-          onChange={onChange}
-          onBlur={onBlur}
-        />
-        <span className="prefix">{PREFIX_TELEGRAM}</span>
+        <div className="phone-wrap">
+          <input
+            maxLength={maxLength}
+            name={name}
+            ref={register}
+            type={type}
+            onChange={onChange}
+            onBlur={onBlur}
+          />
+          <span className="prefix">{PREFIX_TELEGRAM}</span>
+        </div>
       </label>
 
       {error && <ErrorMessage message={error.message} />}

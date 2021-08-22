@@ -93,8 +93,6 @@ export const HeaderLanguage = styled('div')`
   }
 `
 
-export const Sidebar = styled('div')``
-
 export const HeaderLanguageSpan = styled('span')`
   color: #fff;
   outline: navajowhite;

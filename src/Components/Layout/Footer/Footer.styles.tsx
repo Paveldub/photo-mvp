@@ -36,7 +36,7 @@ export const SocialIconLink = styled('a')`
   text-decoration: none;
   margin-right: 20px;
 
-  &::last-child {
+  &:last-child {
     margin-right: 0;
   }
 `
