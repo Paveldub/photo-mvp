@@ -25,6 +25,11 @@
   flex-direction: column;
   background-repeat: no-repeat;
 
+  @media screen and (max-width: 768px) {
+    background-position: 60% 20%;
+    min-height: 50vh;
+  }
+
   &:before {
     content: '';
     position: absolute;

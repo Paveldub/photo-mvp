@@ -4,6 +4,11 @@ export const FormWrap = styled('form')`
   display: flex;
   flex-direction: column;
   width: 350px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `
 
 export const FormInput = styled('input')`

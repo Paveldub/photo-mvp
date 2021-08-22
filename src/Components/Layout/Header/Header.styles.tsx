@@ -21,8 +21,10 @@ export const HeaderContainer = styled('div')`
   align-items: center;
   padding: 15px 15px;
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 768px) {
     background: #fff;
+    display: flex;
+    align-items: flex-end;
   }
 `
 
@@ -36,6 +38,10 @@ export const HeaderSocials = styled('div')`
   width: 100%;
   justify-content: flex-end;
   padding-bottom: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 export const HeaderHalfLeft = styled('div')`

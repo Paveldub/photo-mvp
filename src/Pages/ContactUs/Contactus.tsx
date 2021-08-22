@@ -5,7 +5,7 @@ import './styles.scss'
 export const ContactUs = () => {
   return (
     <>
-      <div className="gallery-image-wrap" />
+      <div className="contact-image-wrap" />
 
       <Container>
         <FormWrapper>
