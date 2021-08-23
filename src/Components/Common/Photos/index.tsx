@@ -15,13 +15,11 @@ export const PhotoDetails = () => {
     storageRef
       .child(storageUrl)
       .listAll()
-      .then((result) => {
-        result.items.map((imageref) => {
-          imageref.getDownloadURL().then((url) => {
-            console.log(url)
+      .then((res) => {
+        const promises = res.items.map((item) => item.getDownloadURL())
 
-            setPhotoset(url)
-          })
+        Promise.all(promises).then((downloadURLs) => {
+          setPhotoset(downloadURLs)
         })
       })
   }, [])
@@ -29,13 +27,13 @@ export const PhotoDetails = () => {
   return (
     <Container>
       <ul>
-        <>
-          <li className="size">
-            <span>photo component</span>
-            {/* {photoset.map((item) => console.log(item))} */}
-            <img src={photoset} alt={photoset} />
-          </li>
-        </>
+        {photoset?.map((item) => {
+          return (
+            <li className="size" key={item}>
+              <img src={item} alt={item} />
+            </li>
+          )
+        })}
       </ul>
     </Container>
   )
