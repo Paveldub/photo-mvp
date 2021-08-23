@@ -1,19 +1,19 @@
 import firebase from 'firebase/app'
 import { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useLocation } from 'react-router'
 import { Container } from '../../../Pages/About/About.styles'
 import './styles.scss'
 
 export const PhotoDetails = () => {
   const storage = firebase.storage()
   const storageRef = storage.ref()
-  const history = useHistory()
-
+  const location = useLocation()
+  const storageUrl = location.pathname.substr(11)
   const [photoset, setPhotoset] = useState([])
 
   useEffect(() => {
     storageRef
-      .child(history.location.pathname.substr(11))
+      .child(storageUrl)
       .listAll()
       .then((result) => {
         result.items.map((imageref) => {
