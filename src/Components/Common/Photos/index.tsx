@@ -1,39 +1,42 @@
+import firebase from 'firebase/app'
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { allData, listAll } from '../../../firebase'
+import { useHistory } from 'react-router'
 import { Container } from '../../../Pages/About/About.styles'
-import { Loading } from '../../Layout/Loader'
 import './styles.scss'
 
 export const PhotoDetails = () => {
-  const [loading, setLoading] = useState(true)
+  const storage = firebase.storage()
+  const storageRef = storage.ref()
+  const history = useHistory()
 
-  const location = useLocation()
-
-  console.log(location.pathname)
+  const [photoset, setPhotoset] = useState([])
 
   useEffect(() => {
-    listAll('water_lilies')
+    storageRef
+      .child(history.location.pathname.substr(11))
+      .listAll()
+      .then((result) => {
+        result.items.map((imageref) => {
+          imageref.getDownloadURL().then((url) => {
+            console.log(url)
 
-    setLoading(false)
-  }, [loading])
+            setPhotoset(url)
+          })
+        })
+      })
+  }, [])
 
   return (
     <Container>
-      <h1>Photo details</h1>
-      {loading ? (
-        <Loading />
-      ) : (
-        <ul>
-          {allData?.map((item, index) => {
-            return (
-              <li key={`${item}_${index}`} className="size">
-                <img src={item} alt="" />
-              </li>
-            )
-          })}
-        </ul>
-      )}
+      <ul>
+        <>
+          <li className="size">
+            <span>photo component</span>
+            {/* {photoset.map((item) => console.log(item))} */}
+            <img src={photoset} alt={photoset} />
+          </li>
+        </>
+      </ul>
     </Container>
   )
 }

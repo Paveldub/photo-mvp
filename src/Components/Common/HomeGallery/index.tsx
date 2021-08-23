@@ -1,28 +1,75 @@
+import firebase from 'firebase/app'
+import { useEffect, useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { Link } from 'react-router-dom'
+import db from '../../../firebase'
 import './styles.scss'
 
-export const HomeGallery = (props) => {
-  const { photo } = props
+export const HomeGallery = () => {
+  const [fileUrl, setFileUrl] = useState(null)
+  const [homePage, setHomePage] = useState([])
 
+  const onFileChange = async (e) => {
+    const file = e.target.files[0]
+    const storageRef = firebase.storage().ref()
+    const fileRef = storageRef.child(file.name)
+    await fileRef.put(file)
+    setFileUrl(await fileRef.getDownloadURL())
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const userName = e.target.username.value
+    if (!userName) {
+      return
+    }
+    db.collection('homeGallery')
+      .doc(userName)
+      .set({
+        id: Math.floor(Math.random() * 100),
+        photo_title: userName,
+        photo_url: fileUrl,
+      })
+  }
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const usersCollection = await db.collection('homeGallery').get()
+      setHomePage(
+        usersCollection.docs.map((doc) => {
+          return doc.data()
+        })
+      )
+    }
+    fetchUsers()
+  }, [])
   return (
     <div className="new-projects">
+      <span>Home gallery component</span>
+      <form onSubmit={onSubmit}>
+        <input type="file" onChange={onFileChange} />
+        <input type="text" name="username" placeholder="name" />
+        <button>submit</button>
+      </form>
       <ul className="new-projects__list">
-        {photo
+        {homePage
           .slice()
           .sort(() => 0.5 - Math.random())
           .map((item) => {
             return (
-              <Link to={`/photos/${item?.data.id}`} key={item?.data.id}>
+              <Link
+                to={`/photos/${item?.id}/${item.photo_title}`}
+                key={item?.id}
+              >
                 <li>
                   <LazyLoadImage
-                    src={item?.data.photo_url}
+                    src={item?.photo_url}
                     effect="blur"
-                    alt={item?.data.photo_title}
+                    alt={item.photo_title}
                     height="450px"
                   />
-                  <span>{item?.data.photo_title}</span>
+                  <span>{item?.photo_title}</span>
                 </li>
               </Link>
             )

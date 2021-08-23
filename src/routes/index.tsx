@@ -34,7 +34,7 @@ const homeRoute = {
 
 const photoId = {
   component: PhotoDetails,
-  path: '/photos/:photosId',
+  path: '/photos/:photosId/:photoName',
 }
 
 export const routes = [
