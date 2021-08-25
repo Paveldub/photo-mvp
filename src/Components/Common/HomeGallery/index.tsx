@@ -4,6 +4,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 import { Link } from 'react-router-dom'
 import db from '../../../firebase'
 import { Loading } from '../../Layout/Loader'
+import { WebPImage } from '../../Layout/WebPImage/indext'
 import './styles.scss'
 
 export const HomeGallery = () => {
@@ -70,7 +71,11 @@ export const HomeGallery = () => {
                     key={item?.id}
                   >
                     <li>
-                      <img src={item?.photo_url} alt={item.photo_title} />
+                      <WebPImage
+                        webPImage={item?.photo_url}
+                        jpgImage={item?.photo_url}
+                        imgElem={item?.photo_url}
+                      />
                       <span>{item?.photo_title}</span>
                     </li>
                   </Link>

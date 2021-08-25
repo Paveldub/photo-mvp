@@ -1,7 +1,7 @@
 import firebase from 'firebase/app'
 import { useEffect, useState } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useLocation } from 'react-router'
-import { Container } from '../../../Pages/About/About.styles'
 import { Loading } from '../../Layout/Loader'
 import { WebPImage } from '../../Layout/WebPImage/indext'
 import './styles.scss'
@@ -29,20 +29,35 @@ export const PhotoDetails = () => {
   }, [loading])
 
   return (
-    <Container>
-      {loading ? (
-        <Loading />
-      ) : (
-        <ul>
-          {photoset?.map((item) => {
-            return (
-              <li className="size" key={item}>
-                <WebPImage webPImage={item} jpgImage={item} imgElem={item} />
-              </li>
-            )
-          })}
-        </ul>
-      )}
-    </Container>
+    <>
+      <LazyLoadImage
+        className="main-image-wrap"
+        src={photoset[0]}
+        effect="blur"
+        height="100%"
+        width="100%"
+      />
+      <div className="photo-component">
+        <div className="container">
+          {loading ? (
+            <Loading />
+          ) : (
+            <ul>
+              {photoset?.map((item) => {
+                return (
+                  <li className="size" key={item}>
+                    <WebPImage
+                      webPImage={item}
+                      jpgImage={item}
+                      imgElem={item}
+                    />
+                  </li>
+                )
+              })}
+            </ul>
+          )}
+        </div>
+      </div>
+    </>
   )
 }
