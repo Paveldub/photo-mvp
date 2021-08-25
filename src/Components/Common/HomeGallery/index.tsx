@@ -1,14 +1,15 @@
 import firebase from 'firebase/app'
 import { useEffect, useState } from 'react'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import { Link } from 'react-router-dom'
 import db from '../../../firebase'
+import { Loading } from '../../Layout/Loader'
 import './styles.scss'
 
 export const HomeGallery = () => {
   const [fileUrl, setFileUrl] = useState(null)
   const [homePage, setHomePage] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const onFileChange = async (e) => {
     const file = e.target.files[0]
@@ -41,9 +42,11 @@ export const HomeGallery = () => {
           return doc.data()
         })
       )
+      setLoading(false)
     }
     fetchUsers()
-  }, [])
+  }, [loading])
+
   return (
     <div className="new-projects">
       <span>Home gallery component</span>
@@ -53,27 +56,28 @@ export const HomeGallery = () => {
         <button>submit</button>
       </form>
       <ul className="new-projects__list">
-        {homePage
-          .slice()
-          .sort(() => 0.5 - Math.random())
-          .map((item) => {
-            return (
-              <Link
-                to={`/photos/${item?.id}/${item.photo_title}`}
-                key={item?.id}
-              >
-                <li>
-                  <LazyLoadImage
-                    src={item?.photo_url}
-                    effect="blur"
-                    alt={item.photo_title}
-                    height="450px"
-                  />
-                  <span>{item?.photo_title}</span>
-                </li>
-              </Link>
-            )
-          })}
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            {homePage
+              .slice()
+              .sort(() => 0.5 - Math.random())
+              .map((item) => {
+                return (
+                  <Link
+                    to={`/photos/${item?.id}/${item.photo_title}`}
+                    key={item?.id}
+                  >
+                    <li>
+                      <img src={item?.photo_url} alt={item.photo_title} />
+                      <span>{item?.photo_title}</span>
+                    </li>
+                  </Link>
+                )
+              })}
+          </>
+        )}
       </ul>
     </div>
   )

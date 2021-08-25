@@ -29,7 +29,7 @@ const homeRoute = {
 
 // const pageNotFound = {
 //   component: PageNotFound,
-//   path: '/*',
+//   path: '*',
 // }
 
 const photoId = {
