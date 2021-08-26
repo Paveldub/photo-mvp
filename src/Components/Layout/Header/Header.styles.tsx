@@ -26,6 +26,10 @@ export const HeaderContainer = styled('div')`
     display: flex;
     align-items: flex-end;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 10px 10px;
+  }
 `
 
 export const HeaderContainerWrapper = styled('div')`
