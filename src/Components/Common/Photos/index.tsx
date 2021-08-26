@@ -13,6 +13,7 @@ export const PhotoDetails = () => {
   const storageUrl = location.pathname.substr(11)
   const [photoset, setPhotoset] = useState([])
   const [loading, setLoading] = useState(true)
+  const url = useLocation()
 
   useEffect(() => {
     storageRef
@@ -30,34 +31,37 @@ export const PhotoDetails = () => {
 
   return (
     <>
-      <LazyLoadImage
-        className="main-image-wrap"
-        src={photoset[0]}
-        effect="blur"
-        height="100%"
-        width="100%"
-      />
-      <div className="photo-component">
-        <div className="container">
-          {loading ? (
-            <Loading />
-          ) : (
-            <ul>
-              {photoset?.map((item) => {
-                return (
-                  <li className="size" key={item}>
-                    <WebPImage
-                      webPImage={item}
-                      jpgImage={item}
-                      imgElem={item}
-                    />
-                  </li>
-                )
-              })}
-            </ul>
-          )}
-        </div>
-      </div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <LazyLoadImage
+            className="main-image-wrap"
+            src={photoset[0]}
+            effect="blur"
+            height="100%"
+            width="100%"
+          />
+          <div className="photo-component">
+            <div className="container">
+              <ul>
+                {photoset?.map((item) => {
+                  return (
+                    <li className="size" key={item}>
+                      <WebPImage
+                        webPImage={item}
+                        jpgImage={item}
+                        imgElem={item}
+                        altText={url.pathname.substr(11)}
+                      />
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }
