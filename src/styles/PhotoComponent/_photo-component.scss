@@ -38,6 +38,11 @@
     }
   }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
   &-top {
     position: relative;
 

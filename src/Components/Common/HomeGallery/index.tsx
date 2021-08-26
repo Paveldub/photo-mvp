@@ -63,8 +63,6 @@ export const HomeGallery = () => {
               .slice()
               .sort(() => 0.5 - Math.random())
               .map((item) => {
-                console.log(item)
-
                 return (
                   <Link
                     to={`/photos/${item?.id}/${item?.photo_title}`}
@@ -78,7 +76,6 @@ export const HomeGallery = () => {
                         altText={item?.photo_title}
                       />
                       <h3>{item?.photo_title}</h3>
-                      <p>{item?.model_name}</p>
                     </li>
                   </Link>
                 )
