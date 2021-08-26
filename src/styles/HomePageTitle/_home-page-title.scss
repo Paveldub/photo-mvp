@@ -1,0 +1,12 @@
+.new-projects-title {
+  text-align: center;
+  margin: 25px 0;
+
+  a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+    @include BodoniRegular;
+  }
+}

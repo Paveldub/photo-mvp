@@ -84,8 +84,18 @@ export const HeaderList = styled('ul')`
 `
 
 export const HeaderLink = styled(Link)`
-  color: red;
+  color: #fff;
   margin-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 16px;
+  transition: opacity 0.25s ease-in-out;
+
+  &:hover {
+    transition: opacity 0.25s ease-in-out;
+    opacity: 0.7;
+  }
 
   &:last-child {
     margin-right: 0;
