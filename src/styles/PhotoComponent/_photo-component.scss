@@ -1,8 +1,12 @@
 .size {
   padding: 0 70px;
 
-  @media screen and (max-width: 600px) {
+  @include smallTablets {
     padding: 0 15px;
+  }
+
+  @include phones {
+    padding: 0 8px;
   }
 
   picture {
@@ -69,10 +73,12 @@
       font-size: 96px;
       font-weight: 400;
       line-height: 96px;
-      color: #fff;
+      color: $white;
       width: 100%;
       text-align: center;
       @include BodoniRegular;
+      background-color: rgba(204, 204, 204, .4);
+      padding: 10px 0;
 
       @include smallTablets {
         font-size: 50px;
