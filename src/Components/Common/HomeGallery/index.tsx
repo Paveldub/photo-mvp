@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import db from '../../../firebase'
 import { Loading } from '../../Layout/Loader'
 import { WebPImage } from '../../Layout/WebPImage/indext'
-import './styles.scss'
 
 export const HomeGallery = () => {
   const [fileUrl, setFileUrl] = useState(null)
@@ -50,7 +49,6 @@ export const HomeGallery = () => {
 
   return (
     <div className="new-projects">
-      <span>Home gallery component</span>
       <form onSubmit={onSubmit}>
         <input type="file" onChange={onFileChange} />
         <input type="text" name="username" placeholder="name" />
@@ -65,9 +63,11 @@ export const HomeGallery = () => {
               .slice()
               .sort(() => 0.5 - Math.random())
               .map((item) => {
+                console.log(item)
+
                 return (
                   <Link
-                    to={`/photos/${item?.id}/${item.photo_title}`}
+                    to={`/photos/${item?.id}/${item?.photo_title}`}
                     key={item?.id}
                   >
                     <li>
@@ -75,8 +75,10 @@ export const HomeGallery = () => {
                         webPImage={item?.photo_url}
                         jpgImage={item?.photo_url}
                         imgElem={item?.photo_url}
+                        altText={item?.photo_title}
                       />
-                      <span>{item?.photo_title}</span>
+                      <h3>{item?.photo_title}</h3>
+                      <p>{item?.model_name}</p>
                     </li>
                   </Link>
                 )

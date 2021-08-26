@@ -4,7 +4,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useLocation } from 'react-router'
 import { Loading } from '../../Layout/Loader'
 import { WebPImage } from '../../Layout/WebPImage/indext'
-import './styles.scss'
 
 export const PhotoDetails = () => {
   const storage = firebase.storage()
@@ -13,7 +12,6 @@ export const PhotoDetails = () => {
   const storageUrl = location.pathname.substr(11)
   const [photoset, setPhotoset] = useState([])
   const [loading, setLoading] = useState(true)
-  const url = useLocation()
 
   useEffect(() => {
     storageRef
@@ -35,26 +33,32 @@ export const PhotoDetails = () => {
         <Loading />
       ) : (
         <>
-          <LazyLoadImage
-            className="main-image-wrap"
-            src={photoset[0]}
-            effect="blur"
-            height="100%"
-            width="100%"
-          />
+          <div className="photo-component-top" key={`${photoset[0]}_1`}>
+            <LazyLoadImage
+              className="main-image-wrap"
+              src={photoset[0]}
+              effect="blur"
+              height="100%"
+              width="100%"
+            />
+            <h2 className="photo-component-top__title">{storageUrl}</h2>
+          </div>
+
           <div className="photo-component">
             <div className="container">
-              <ul>
+              <ul className="photo-component__list">
                 {photoset?.map((item) => {
                   return (
-                    <li className="size" key={item}>
-                      <WebPImage
-                        webPImage={item}
-                        jpgImage={item}
-                        imgElem={item}
-                        altText={url.pathname.substr(11)}
-                      />
-                    </li>
+                    <>
+                      <li className="size" key={`${item}`}>
+                        <WebPImage
+                          webPImage={item}
+                          jpgImage={item}
+                          imgElem={item}
+                          altText={storageUrl}
+                        />
+                      </li>
+                    </>
                   )
                 })}
               </ul>

@@ -11,6 +11,7 @@ import {
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
 import { routes } from './routes'
+import './styles/_main.scss'
 import { getPathname } from './utils/getPathName'
 
 export {

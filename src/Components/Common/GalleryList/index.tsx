@@ -17,7 +17,6 @@ export const GalleryList = (props) => {
               src={item?.data.photo_url}
               effect="blur"
               alt={item?.data.photo_title}
-              height="450px"
             />
             <div className="gallery__item-desc">
               <span>{item?.data.photo_title}</span>
