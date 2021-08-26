@@ -1,43 +1,43 @@
-  .contact-image-wrap  {
-    background: url('../../assets/images/contact-us.jpg');
-    background-position: 100% 50%;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.31);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    height: 100%;
-    min-height: 85vh;
-    max-height: 85vh;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    position: relative;
-    background-attachment: fixed;
+.contact-image-wrap  {
+  background-image: url('../../assets/images/contact-us.jpg');
+  background-position: 100% 50%;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.31);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+  min-height: 85vh;
+  max-height: 85vh;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
 
-    @media screen and (max-width: 1200px) {
-      background-position: 50% 50%;
-    }
-
-    @media screen and (max-width: 768px) {
-      background-position: 60% 20%;
-      min-height: 75vh;
-    }
-
-    @media screen and (max-width: 480px) {
-      min-height: 75vh;
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #000;
-      opacity: .1;
-    }
+  @media screen and (max-width: 1200px) {
+    background-position: 50% 50%;
   }
+
+  @media screen and (max-width: 768px) {
+    background-position: 60% 20%;
+    min-height: 75vh;
+  }
+
+  @media screen and (max-width: 480px) {
+    min-height: 75vh;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .1;
+  }
+}
 
 .form__input {
   position: relative;
@@ -54,31 +54,31 @@
 }
 
 .phone-wrap {
-  position: relative;
+position: relative;
 
-  input {
-    padding-left: 65px;
-  }
+input {
+  padding-left: 65px;
+}
 }
 
 .prefix {
-  background: #ccc;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  text-align: center;
-  line-height: 30px;
-  padding: 0 10px;
-  border-radius: 5px 0 0 5px;
-  min-width: 58px;
+background: #ccc;
+position: absolute;
+top: 0;
+left: 0;
+height: 30px;
+text-align: center;
+line-height: 30px;
+padding: 0 10px;
+border-radius: 5px 0 0 5px;
+min-width: 58px;
 }
 
 .selectdiv {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 
-  select {
-    height: 30px;
-  }
+select {
+  height: 30px;
+}
 }

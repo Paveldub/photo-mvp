@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100%;
     padding: 0;
     margin: 0;
+    background: #fff;
   }
   h1,
   h2,

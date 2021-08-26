@@ -5,9 +5,25 @@
     padding: 0 20px;
   }
 
-  img {
-    height: auto;
-    width: 100%;
+  picture {
+    display: block;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      opacity: .1;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 }
 
@@ -25,6 +41,17 @@
   &-top {
     position: relative;
 
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      opacity: .15;
+    }
+
     &__title {
       position: absolute;
       top: 50%;
@@ -34,6 +61,8 @@
       font-weight: 400;
       line-height: 96px;
       color: #fff;
+      width: 100%;
+      text-align: center;
     }
   }
 }

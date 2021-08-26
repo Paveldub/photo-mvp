@@ -54,11 +54,11 @@ export const HomeGallery = () => {
         <input type="text" name="username" placeholder="name" />
         <button>submit</button>
       </form>
-      <ul className="new-projects__list">
-        {loading ? (
-          <Loading />
-        ) : (
-          <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          <ul className="new-projects__list">
             {homePage
               .slice()
               .sort(() => 0.5 - Math.random())
@@ -83,9 +83,9 @@ export const HomeGallery = () => {
                   </Link>
                 )
               })}
-          </>
-        )}
-      </ul>
+          </ul>
+        </>
+      )}
     </div>
   )
 }

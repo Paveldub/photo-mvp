@@ -13,13 +13,15 @@ export const Home = () => {
 
   return (
     <>
-      <LazyLoadImage
-        className="main-image-wrap"
-        src={mainImage}
-        effect="blur"
-        height="100%"
-        width="100%"
-      />
+      <div className="new-project-background">
+        <LazyLoadImage
+          className="main-image-wrap"
+          src={mainImage}
+          effect="blur"
+          height="100%"
+          width="100%"
+        />
+      </div>
 
       <div className="new-projects-title">
         <Link to="/gallery">{t.newFeaturedProjectsText}</Link>
