@@ -1,11 +1,9 @@
-
 .not-found {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-
 
   &__heading {
     padding: 40px;
@@ -17,10 +15,6 @@
       line-height: 45px;
       color: blue;
     }
-  }
-
-  &__image {
-
   }
 
   &__button {

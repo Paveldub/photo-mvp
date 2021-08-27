@@ -25,7 +25,7 @@ export const HomeGallery = () => {
     if (!userName) {
       return
     }
-    db.collection('homeGallery')
+    db.collection('GalleryPage')
       .doc(userName)
       .set({
         id: Math.floor(Math.random() * 100),

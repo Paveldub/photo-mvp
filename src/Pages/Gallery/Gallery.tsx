@@ -15,14 +15,16 @@ export const Gallery = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    db.collection('galleryPage').onSnapshot((snapshot) => {
+    const fetchUsers = async () => {
+      const usersCollection = await db.collection('GalleryPage').get()
       setGallery(
-        snapshot.docs.map((doc) => ({
-          data: doc.data(),
-        }))
+        usersCollection.docs.map((doc) => {
+          return doc.data()
+        })
       )
       setLoading(false)
-    })
+    }
+    fetchUsers()
   }, [loading])
 
   return (

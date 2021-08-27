@@ -1,4 +1,5 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Link } from 'react-router-dom'
 
 export const GalleryList = (props) => {
   const { gallery } = props
@@ -11,17 +12,21 @@ export const GalleryList = (props) => {
             className={
               'gallery__item gallery__item--' + (index % 2 ? 'right' : 'left')
             }
-            key={item.data.id}
+            key={item?.id}
           >
-            <LazyLoadImage
-              src={item?.data.photo_url}
-              effect="blur"
-              alt={item?.data.photo_title}
-            />
-            <div className="gallery__item-desc">
-              <span>{item?.data.photo_title}</span>
-              <p>{item?.data.photo_description}</p>
-            </div>
+            <Link
+              to={`/photos/${item?.id}/${item?.photo_title}`}
+              key={item?.id}
+            >
+              <LazyLoadImage
+                src={item?.photo_url}
+                effect="blur"
+                alt={item?.photo_title}
+              />
+              <div className="gallery__item-desc">
+                <span>{item?.photo_title}</span>
+              </div>
+            </Link>
           </li>
         )
       })}
