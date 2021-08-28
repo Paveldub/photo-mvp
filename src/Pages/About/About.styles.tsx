@@ -5,4 +5,8 @@ export const Container = styled('div')`
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+
+  @media screen and (max-width: 480px) {
+    padding: 0 8px;
+  }
 `

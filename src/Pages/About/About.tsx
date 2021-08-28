@@ -46,12 +46,12 @@ export const About = () => {
           <Loading />
         ) : (
           <div className="about-page">
-            <div className="about-page-title">
+            <div className="about-page__title">
               <h1>{t.aboutMeText}</h1>
             </div>
             <AboutPageMyInfo aboutMyInfo={myInfo} />
 
-            <div className="about-page-title">
+            <div className="about-page__title">
               <h1>{t.aboutPageTitle}</h1>
             </div>
             <AboutPageList aboutData={magazineData} />

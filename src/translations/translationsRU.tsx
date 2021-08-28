@@ -35,6 +35,8 @@ const translationsRU = {
   pageNotFoundButtonText: 'На главную',
   newFeaturedProjectsText: 'новые проекты',
   aboutMeText: 'Обо мне',
+  contactText: 'Нравиться что я делаю?',
+  textMeText: 'Напиши мне',
 }
 
 export default translationsRU

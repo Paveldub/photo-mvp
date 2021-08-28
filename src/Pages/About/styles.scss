@@ -1,10 +1,17 @@
 .about-page {
   margin-top: 50px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
-.about-page-title {
-  margin-bottom: 20px;
-}
 
 .about-image-wrap  {
   background: url('../../assets/images/about-page.jpg');

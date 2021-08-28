@@ -1,9 +1,38 @@
-.about-me-wrap {
-  display: flex;
-  margin-bottom: 40px;
+.about-me {
+  &__wrap {
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+  }
+
+  &__contacts {
+    margin: 40px 0;
+    text-align: center;
+
+    a {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+
+  &__links {
+    text-align: center;
+
+    a {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 
   img {
-    max-width: 50%;
+    max-width: 80%;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   p {

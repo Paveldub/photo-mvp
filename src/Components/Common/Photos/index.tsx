@@ -63,10 +63,13 @@ export const PhotoDetails = () => {
             <div className="container">
               <ul className="photo-component__list">
                 {modelsData?.map((data) => {
-                  if (data.photo_title === storageUrl) {
+                  if (data?.photo_title === storageUrl) {
                     return (
                       <>
-                        <li className="photo-component__item">
+                        <li
+                          className="photo-component__item"
+                          key={`${data?.photo_title}`}
+                        >
                           <span className="photo-component__item-name">
                             <a
                               href={data?.photographer_instagram}
@@ -85,7 +88,10 @@ export const PhotoDetails = () => {
                               {data?.model_name}
                             </a>
                           </span>
-                          <span className="photo-component__item-name">
+                          <span
+                            className="photo-component__item-name"
+                            key={`${data?.photo_title}_${data?.model_instagram}`}
+                          >
                             <a
                               href={data?.model_instagram}
                               target="_blank"
@@ -102,10 +108,10 @@ export const PhotoDetails = () => {
                     )
                   }
                 })}
-                {photoset?.map((item) => {
+                {photoset?.map((item, index) => {
                   return (
                     <>
-                      <li className="size" key={`${item}`}>
+                      <li className="size" key={`${item}_${index}`}>
                         <PhotoModelsData
                           webPImage={item}
                           jpgImage={item}

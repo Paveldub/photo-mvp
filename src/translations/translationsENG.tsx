@@ -36,6 +36,8 @@ const translationsENG = {
   pageNotFoundButtonText: 'Home page',
   newFeaturedProjectsText: 'new featured projects',
   aboutMeText: 'About me',
+  contactText: 'Like what I do? ',
+  textMeText: 'Leave me a message',
 }
 
 export default translationsENG

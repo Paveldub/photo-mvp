@@ -8,13 +8,15 @@ export const AboutPageMyInfo = (props) => {
       {aboutMyInfo?.map((item) => {
         return (
           <>
-            <div key={item?.data.id} className="about-me-wrap">
-              <img
-                src={item?.data.about_me_photo}
-                alt={item?.data.about_title}
-              />
-              <p>{item?.data.about_me_description}</p>
+            <div className="about-me">
+              <div key={item?.data.id} className="about-me__wrap">
+                <img
+                  src={item?.data.about_me_photo}
+                  alt={item?.data.about_title}
+                />
+              </div>
             </div>
+            <p>test</p>
           </>
         )
       })}
