@@ -58,7 +58,6 @@ export const HomeGallery = () => {
         <Loading />
       ) : (
         <>
-          <Loading />
           <ul className="new-projects__list">
             {homePage
               .slice()
