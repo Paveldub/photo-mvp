@@ -12,6 +12,7 @@ const translationsENG = {
   galleryPageText: 'Gallery',
   aboutPageText: 'About',
   contactPageText: 'Contacts',
+  loginPageText: 'Login',
   errorRequiredText: 'This field is required',
   formFirstNameText: 'Name',
   formEmailText: 'Email',
@@ -38,6 +39,7 @@ const translationsENG = {
   aboutMeText: 'About me',
   contactText: 'Like what I do? ',
   textMeText: 'Leave me a message',
+  registrationTitle: 'Registration',
 }
 
 export default translationsENG

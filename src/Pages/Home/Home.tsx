@@ -3,6 +3,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css'
 import { Link } from 'react-router-dom'
 import mainImage from '../../assets/images/main-image.webp'
 import { HomeGallery } from '../../Components/Common/HomeGallery'
+import { ScrollButton } from '../../Components/Layout/ScrollArrow'
 import { useTranslate } from '../../Hooks/useTranslate'
 import './styles.scss'
 
@@ -13,6 +14,8 @@ export const Home = () => {
 
   return (
     <>
+      <ScrollButton />
+
       <div className="new-project-background">
         <LazyLoadImage
           className="main-image-wrap"

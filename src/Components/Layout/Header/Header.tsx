@@ -7,9 +7,8 @@ import { useChangeLanguage } from '../../../Hooks/useLanguageHook'
 import { useTranslate } from '../../../Hooks/useTranslate'
 import { SocialIconLink } from '../Footer/Footer.styles'
 import { Sidebar } from '../Sidebar/index'
+import './header.scss'
 import {
-  ContainerWrapper,
-  HeaderContainer,
   HeaderContainerWrapper,
   HeaderHalfLeft,
   HeaderHalfRight,
@@ -20,7 +19,13 @@ import {
   HeaderSocials,
 } from './Header.styles'
 import './styles.scss'
-const WORDS = ['galleryText', 'aboutText', 'contactUsText', 'homePageText']
+const WORDS = [
+  'galleryText',
+  'aboutText',
+  'contactUsText',
+  'homePageText',
+  'registrationTitle',
+]
 
 export const Header = () => {
   const [isSideBarOpen, setIsSideBarOpen] = useState(false)
@@ -31,8 +36,8 @@ export const Header = () => {
 
   return (
     <>
-      <ContainerWrapper>
-        <HeaderContainer>
+      <header className="header">
+        <div className="header__contaner">
           <HeaderSocials>
             {SOCIAL_NETWORK_LINKS.map((item) => (
               <SocialIconLink key={item.icon} href={item.href} target="_blank">
@@ -48,6 +53,7 @@ export const Header = () => {
                 <HeaderLink to="/gallery">{t.galleryText}</HeaderLink>
                 <HeaderLink to="/about">{t.aboutText}</HeaderLink>
                 <HeaderLink to="/contact">{t.contactUsText}</HeaderLink>
+                <HeaderLink to="/login">{t.registrationTitle}</HeaderLink>
               </HeaderNav>
             </HeaderHalfLeft>
             <HeaderHalfRight>
@@ -76,12 +82,12 @@ export const Header = () => {
           >
             <div className="menu-btn__burger" />
           </div>
-        </HeaderContainer>
-        <Sidebar
-          isOpen={isSideBarOpen}
-          onClose={() => setIsSideBarOpen(false)}
-        />
-      </ContainerWrapper>
+          <Sidebar
+            isOpen={isSideBarOpen}
+            onClose={() => setIsSideBarOpen(false)}
+          />
+        </div>
+      </header>
     </>
   )
 }

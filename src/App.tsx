@@ -1,41 +1,25 @@
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import { useTranslation } from 'react-i18next'
-import { Route, Switch } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { Footer, Header } from './Components'
 import { AgeConfirmationPopup } from './Components/Layout/AgeConfirmationPopup'
-import { STEPS } from './Constants/steps'
+import { auth } from './firebase'
 import {
   ContentWrapper,
   GlobalStyles,
   PagesWrapper,
 } from './globalStyles/GlobalStyles.styles'
+import { setUser } from './redux/actions/setUsersAction'
 import { routes } from './routes'
 import './styles/_main.scss'
-import { getPathname } from './utils/getPathName'
-
-export {
-  ABOUT_PATH,
-  CONTACTS_PATH,
-  GALLERY_PATH,
-  HOME_PATH,
-} from './Constants/paths'
-
-const titles = {
-  1: 'homePageTitle',
-  2: 'galleryPageTitle',
-  3: 'aboutPageTitle',
-  4: 'contactPageTitle',
-}
 
 export const App = () => {
-  const { t } = useTranslation()
-  const pageStep = getPathname(location)
-
-  const step = STEPS[pageStep]
-
   const [isAgeConfirmation, setIsAgeConfirmation] = useState(true)
   const isLocalStorage = localStorage.getItem('ageConfirmation') === null
+  const t = useTranslation()
+  const location = useLocation().pathname.substring(1)
+  const dispatch = useDispatch()
 
   const closeAgePopup = () => {
     setIsAgeConfirmation(!isAgeConfirmation)
@@ -44,7 +28,22 @@ export const App = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
+  }, [t])
+
+  useEffect(() => {
+    document.title = location
+  }, [location])
+
+  // if user signed in
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch(setUser(authUser))
+      } else {
+        dispatch(setUser(null))
+      }
+    })
+  }, [dispatch])
 
   return (
     <>
@@ -55,9 +54,6 @@ export const App = () => {
         />
       ) : null}
 
-      <Helmet>
-        <title>{t[titles[step]]}</title>
-      </Helmet>
       <GlobalStyles />
 
       <Header />

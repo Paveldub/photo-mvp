@@ -1,12 +1,9 @@
-.form {
-  &__input {
-    label {
-      display: flex;
-      flex-direction: column;
-    }
+.form__input {
+  outline: none;
 
-    &--active input {
-      border: 1px solid #ff3306;
-    }
+  .form__input--active {
+      input {
+        border: 1px solid #ff3306;
+      }
   }
 }

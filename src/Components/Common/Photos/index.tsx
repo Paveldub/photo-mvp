@@ -3,14 +3,16 @@ import { useEffect, useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useLocation } from 'react-router'
 import db from '../../../firebase'
+import { LikeCounter } from '../../Layout/LikeCounter'
 import { Loading } from '../../Layout/Loader'
-import { PhotoModelsData } from '../PhotoModelsData'
+import { ScrollButton } from '../../Layout/ScrollArrow'
+import { PhotoComponent } from '../PhotoComponent'
 
 export const PhotoDetails = () => {
   const storage = firebase.storage()
   const storageRef = storage.ref()
   const location = useLocation()
-  const storageUrl = location.pathname.substr(11)
+  const storageUrl = location.pathname.substring(11)
   const [photoset, setPhotoset] = useState([])
   const [loading, setLoading] = useState(true)
   const [modelsData, setModelsData] = useState([])
@@ -48,6 +50,8 @@ export const PhotoDetails = () => {
         <Loading />
       ) : (
         <>
+          <ScrollButton />
+
           <div className="photo-component-top" key={`${photoset[0]}_1`}>
             <LazyLoadImage
               className="main-image-wrap"
@@ -58,9 +62,10 @@ export const PhotoDetails = () => {
             />
             <h2 className="photo-component-top__title">{storageUrl}</h2>
           </div>
-
           <div className="photo-component">
             <div className="container">
+              <LikeCounter />
+
               <ul className="photo-component__list">
                 {modelsData?.map((data) => {
                   if (data?.photo_title === storageUrl) {
@@ -68,7 +73,7 @@ export const PhotoDetails = () => {
                       <>
                         <li
                           className="photo-component__item"
-                          key={`${data?.photo_title}`}
+                          key={`${data.photo_title}`}
                         >
                           <span className="photo-component__item-name">
                             <a
@@ -112,7 +117,7 @@ export const PhotoDetails = () => {
                   return (
                     <>
                       <li className="size" key={`${item}_${index}`}>
-                        <PhotoModelsData
+                        <PhotoComponent
                           webPImage={item}
                           jpgImage={item}
                           imgElem={item}

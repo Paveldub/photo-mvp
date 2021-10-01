@@ -15,6 +15,7 @@ const WORDS = [
   'aboutPageText',
   'contactPageText',
   'socialsText',
+  'loginPageText',
 ]
 
 function SideBarBackDrop({ onClose }) {
@@ -81,6 +82,11 @@ export const Sidebar = ({ isOpen, onClose }) => {
           <li className="sidebar__item">
             <Link to="/contact" onKeyDown={onClose} onClick={onClose}>
               {t.contactPageText}
+            </Link>
+          </li>
+          <li className="sidebar__item">
+            <Link to="/login" onKeyDown={onClose} onClick={onClose}>
+              {t.loginPageText}
             </Link>
           </li>
         </ul>

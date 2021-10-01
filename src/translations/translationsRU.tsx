@@ -11,6 +11,7 @@ const translationsRU = {
   galleryPageText: 'Галерея',
   aboutPageText: 'Обо мне',
   contactPageText: 'Контакты',
+  loginPageText: 'Регистрация',
   errorRequiredText: 'Обязательное поле для заполнения',
   formFirstNameText: 'Имя',
   formEmailText: 'Почта',
@@ -37,6 +38,7 @@ const translationsRU = {
   aboutMeText: 'Обо мне',
   contactText: 'Нравиться что я делаю?',
   textMeText: 'Напиши мне',
+  registrationTitle: 'Регистрация',
 }
 
 export default translationsRU

@@ -1,37 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const ContainerWrapper = styled('header')`
-  display: flex;
-  width: 100%;
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-`
-
-export const HeaderContainer = styled('div')`
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 15px;
-  align-items: center;
-  padding: 15px 15px;
-
-  @media screen and (max-width: 768px) {
-    background: #fff;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  @media screen and (max-width: 480px) {
-    padding: 10px 10px;
-  }
-`
-
 export const HeaderContainerWrapper = styled('div')`
   display: flex;
   flex-direction: row;

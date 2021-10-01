@@ -1,4 +1,5 @@
 import firebase from 'firebase/app'
+import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage'
 
@@ -13,4 +14,10 @@ const firebaseApp = firebase.initializeApp({
 })
 
 const db = firebaseApp.firestore()
+export const firestore = firebase.firestore()
+
+export const auth = firebase.auth()
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
+export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider()
+
 export default db

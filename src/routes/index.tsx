@@ -4,12 +4,28 @@ import {
   CONTACTS_PATH,
   GALLERY_PATH,
   HOME_PATH,
+  LOGIN_PATH,
+  REGISTER_PATH,
+  WELCOME_PATH,
 } from '../Constants/paths'
-import { About, ContactUs, Gallery, Home } from '../Pages'
+import {
+  About,
+  ContactUs,
+  Gallery,
+  Home,
+  Login,
+  Register,
+  WelcomePage,
+} from '../Pages'
 
 const galleryRoute = {
   path: GALLERY_PATH,
   component: Gallery,
+}
+
+const WeclomeRoute = {
+  path: WELCOME_PATH,
+  component: WelcomePage,
 }
 
 const aboutRoute = {
@@ -25,6 +41,16 @@ const contactRoute = {
 const homeRoute = {
   path: HOME_PATH,
   component: Home,
+}
+
+const registerRoute = {
+  path: REGISTER_PATH,
+  component: Register,
+}
+
+const loginRoute = {
+  path: LOGIN_PATH,
+  component: Login,
 }
 
 // const pageNotFound = {
@@ -44,4 +70,7 @@ export const routes = [
   homeRoute,
   // pageNotFound,
   photoId,
+  registerRoute,
+  loginRoute,
+  WeclomeRoute,
 ]

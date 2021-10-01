@@ -1,4 +1,4 @@
-export const PhotoModelsData = (props) => {
+export const PhotoComponent = (props) => {
   const { webPImage, jpgImage, imgElem, altText } = props
 
   return (
